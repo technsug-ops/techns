@@ -167,8 +167,8 @@ export const tr: Dictionary = {
       { period: "2010 – 2025", role: "Kurucu", org: "euroTech Study – BT eğitimleri" },
     ],
     languages: [
-      { name: "Almanca", level: "[Seviye, ör. C1]" },
-      { name: "İngilizce", level: "[Seviye, ör. C1]" },
+      { name: "Almanca", level: "B2" },
+      { name: "İngilizce", level: "B1" },
       { name: "Türkçe", level: "Ana dil" },
     ],
     portrait: "Portre fotoğrafı",

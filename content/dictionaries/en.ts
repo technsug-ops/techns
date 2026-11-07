@@ -167,8 +167,8 @@ export const en: Dictionary = {
       { period: "2010 – 2025", role: "Founder", org: "euroTech Study – IT training" },
     ],
     languages: [
-      { name: "German", level: "[Level, e.g. C1]" },
-      { name: "English", level: "[Level, e.g. C1]" },
+      { name: "German", level: "B2" },
+      { name: "English", level: "B1" },
       { name: "Turkish", level: "Native" },
     ],
     portrait: "Portrait photo",
