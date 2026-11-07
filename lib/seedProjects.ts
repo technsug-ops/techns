@@ -48,18 +48,15 @@ export async function seedProjects(payload: Payload): Promise<number> {
 }
 
 /**
- * Einmaliger Erststart: Ist die Datenbank ganz frisch (noch kein Benutzer, noch kein Projekt),
- * werden die Startprojekte importiert. Sobald ein Konto existiert, passiert hier nie wieder etwas.
+ * Einmaliger Erststart: Solange noch kein Benutzerkonto existiert, werden fehlende Startprojekte importiert. Sobald ein Konto existiert, passiert hier nie wieder etwas.
  */
 export async function seedOnFirstRun(payload: Payload): Promise<void> {
   try {
-    const [users, projects] = await Promise.all([
-      payload.count({ collection: "users" }),
-      payload.count({ collection: "projects" }),
-    ]);
-    if (users.totalDocs > 0 || projects.totalDocs > 0) return;
+    // Sobald ein Konto existiert, wird nie wieder automatisch importiert.
+    const users = await payload.count({ collection: "users" });
+    if (users.totalDocs > 0) return;
     const n = await seedProjects(payload);
-    payload.logger.info(`Erststart: ${n} Startprojekte importiert.`);
+    if (n > 0) payload.logger.info(`Erststart: ${n} Startprojekte importiert.`);
   } catch (err) {
     payload.logger.error({ err }, "Erststart-Import fehlgeschlagen");
   }

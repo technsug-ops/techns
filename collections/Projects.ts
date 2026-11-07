@@ -97,10 +97,10 @@ export const Projects: CollectionConfig = {
         {
           name: "url",
           type: "text",
-          label: "Live-URL",
-          required: true,
-          admin: { width: "60%" },
+          label: "Live-URL (optional)",
+          admin: { width: "60%", description: "Leer lassen, wenn es noch keine öffentliche Adresse gibt." },
           validate: (v: unknown) => {
+            if (v === null || v === undefined || v === "") return true;
             if (typeof v !== "string") return "Bitte eine URL eingeben.";
             try {
               const u = new URL(v);

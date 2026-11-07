@@ -8,17 +8,28 @@ export function hostname(url: string) {
 }
 
 export function Screenshot({ project, sizes, priority }: { project: Project; sizes: string; priority?: boolean }) {
-  return (
-    <a className="shot" href={project.url} target="_blank" rel="noopener" aria-label={`${project.name} live öffnen (neues Fenster)`}>
+  const inner = (
+    <>
       {project.screenshot ? (
         <Image src={project.screenshot.url} alt={project.screenshot.alt || `Startseite von ${project.name}`} fill sizes={sizes} priority={priority} style={{ objectFit: "cover", objectPosition: "top center" }} />
       ) : (
         <span className="shot-fallback">{project.name}</span>
       )}
       <span className={`pill${project.kind === "In Entwicklung" ? " dev" : ""}`}>{project.kind}</span>
-      <span className="shot-open" aria-hidden="true">Live ansehen ↗</span>
+      {project.url && <span className="shot-open" aria-hidden="true">Live ansehen ↗</span>}
+    </>
+  );
+  if (!project.url) return <div className="shot">{inner}</div>;
+  return (
+    <a className="shot" href={project.url} target="_blank" rel="noopener" aria-label={`${project.name} live öffnen (neues Fenster)`}>
+      {inner}
     </a>
   );
+}
+
+export function domainOf(project: Project): string | undefined {
+  if (project.displayDomain) return project.displayDomain;
+  return project.url ? hostname(project.url) : undefined;
 }
 
 export function StackTags({ stack }: { stack: string[] }) {
@@ -60,7 +71,11 @@ export function ProjectCard({ project }: { project: Project }) {
         <StackTags stack={project.stack} />
       </div>
       <div className="card-actions">
-        <a href={project.url} target="_blank" rel="noopener">{project.displayDomain ?? hostname(project.url)} ↗</a>
+        {project.url ? (
+          <a href={project.url} target="_blank" rel="noopener">{domainOf(project)} ↗</a>
+        ) : (
+          <span className="no-url">{project.kind === "In Entwicklung" ? "Noch nicht öffentlich" : ""}</span>
+        )}
         <Link className="details" href={`/projekte/${project.slug}`}>
           Details ansehen <span className="arrow"><Icon name="next" /></span>
         </Link>

@@ -1,13 +1,17 @@
 "use client";
 
 import { company, founder, nav } from "@/content/site";
+import { usePathname } from "next/navigation";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import { navHref, sectionIds } from "./navHref";
 import { Icon } from "./Icons";
 import { Logo } from "./Logo";
 
 /** Feste Seitenleiste auf großen Bildschirmen (ab 1180 px). */
 export function Sidebar({ base = "" }: { base?: string }) {
-  const active = useActiveSection(nav.map((n) => n.href.slice(1)));
+  const section = useActiveSection(sectionIds(nav));
+  const pathname = usePathname();
+  const isOn = (href: string) => (href.startsWith("/") ? pathname === href : pathname === "/" && section === href.slice(1));
   return (
     <aside className="side" aria-label="Seitenleiste">
       <a className="brand" href={`${base}#start`} aria-label="TechNS – zum Seitenanfang">
@@ -18,9 +22,9 @@ export function Sidebar({ base = "" }: { base?: string }) {
 
       <nav className="side-nav" aria-label="Abschnitte">
         {nav.map((item) => {
-          const on = active === item.href.slice(1);
+          const on = isOn(item.href);
           return (
-            <a key={item.href} href={`${base}${item.href}`} className={on ? "active" : undefined} aria-current={on ? "location" : undefined}>
+            <a key={item.href} href={navHref(item, base)} className={on ? "active" : undefined} aria-current={on ? "location" : undefined}>
               {item.label}
             </a>
           );

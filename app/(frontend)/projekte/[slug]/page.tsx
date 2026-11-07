@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projectGroups } from "@/content/site";
 import { getProjects } from "@/lib/projects";
-import { CaseBlockView, hostname, Screenshot, StackTags } from "@/components/ProjectCard";
+import { CaseBlockView, domainOf, Screenshot, StackTags } from "@/components/ProjectCard";
 import { Shell } from "@/components/Shell";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: Props) {
           <h1>{project.name}</h1>
           <p className="lede">{project.description}</p>
           <div className="cta">
-            <a className="btn btn-teal" href={project.url} target="_blank" rel="noopener">{project.displayDomain ?? hostname(project.url)} öffnen ↗</a>
+            {project.url && <a className="btn btn-teal" href={project.url} target="_blank" rel="noopener">{domainOf(project)} öffnen ↗</a>}
             <Link className="btn btn-line" href="/#kontakt">Ähnliches Projekt anfragen</Link>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: Props) {
               <div><dt>Bereich</dt><dd>{group?.eyebrow}</dd></div>
               <div><dt>Art</dt><dd>{project.kind}</dd></div>
               {project.metric && <div><dt>Kennzahl</dt><dd>{project.metric}</dd></div>}
-              <div><dt>Live</dt><dd><a href={project.url} target="_blank" rel="noopener">{project.displayDomain ?? hostname(project.url)} ↗</a></dd></div>
+              {project.url && <div><dt>Live</dt><dd><a href={project.url} target="_blank" rel="noopener">{domainOf(project)} ↗</a></dd></div>}
             </dl>
             {project.stack.length > 0 && (<><h4>Technologien</h4><StackTags stack={project.stack} /></>)}
           </aside>

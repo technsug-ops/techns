@@ -12,6 +12,8 @@ Firmenwebsite der TechNS UG mit eingebautem Verwaltungsbereich.
 2. **Projekte** → Liste. Reihenfolge über den Griff (⋮⋮) links verschieben.
 3. **Neues Projekt:** „Neu erstellen“ → Name, Bereich (ERP oder Websites), Art, Kurzbeschreibung, Live-URL. Optional Screenshot, Technologien und Fallstudien-Abschnitte für die Detailseite.
 4. **Ausblenden statt löschen:** Haken „Auf der Website anzeigen“ entfernen.
+5. **„Aktuell in Entwicklung“** auf der Startseite zeigt automatisch alle Projekte mit Art „In Entwicklung“.
+6. **Team:** Unter „Team“ Mitglieder anlegen, sortieren und ausblenden – erscheint auf `/team`.
 
 Änderungen erscheinen sofort auf der Website – Startseite, Detailseite `/projekte/<kürzel>` und Sitemap werden automatisch neu erzeugt.
 Die Sprache der Verwaltung (Deutsch, Türkisch, Englisch) lässt sich im eigenen Konto umstellen.

@@ -68,6 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     projects: Project;
+    team: Team;
     media: Media;
     users: User;
     'payload-kv': PayloadKv;
@@ -78,6 +79,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    team: TeamSelect<false> | TeamSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -134,7 +136,10 @@ export interface Project {
   meta: string;
   description: string;
   metric?: string | null;
-  url: string;
+  /**
+   * Leer lassen, wenn es noch keine öffentliche Adresse gibt.
+   */
+  url?: string | null;
   displayDomain?: string | null;
   screenshot?: (number | null) | Media;
   /**
@@ -210,6 +215,29 @@ export interface Media {
   };
 }
 /**
+ * Reihenfolge per Drag & Drop ändern. Erscheint auf der Seite /team.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team".
+ */
+export interface Team {
+  id: number;
+  _order?: string | null;
+  name: string;
+  role: string;
+  photo?: (number | null) | Media;
+  bio?: string | null;
+  /**
+   * Eingabe + Enter fügt ein Etikett hinzu.
+   */
+  focus?: string[] | null;
+  linkedin?: string | null;
+  email?: string | null;
+  visible?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -263,6 +291,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'projects';
         value: number | Project;
+      } | null)
+    | ({
+        relationTo: 'team';
+        value: number | Team;
       } | null)
     | ({
         relationTo: 'media';
@@ -365,6 +397,23 @@ export interface ProjectsSelect<T extends boolean = true> {
             };
       };
   slug?: T;
+  visible?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team_select".
+ */
+export interface TeamSelect<T extends boolean = true> {
+  _order?: T;
+  name?: T;
+  role?: T;
+  photo?: T;
+  bio?: T;
+  focus?: T;
+  linkedin?: T;
+  email?: T;
   visible?: T;
   updatedAt?: T;
   createdAt?: T;

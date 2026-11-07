@@ -9,7 +9,8 @@ import type { IconName } from "@/components/Icons";
 /** Überschrift mit kursiv gesetztem Akzentwort, z. B. „Was wir für *Sie* tun“. */
 export type AccentHeading = { before: string; accent: string; after?: string };
 
-export type NavItem = { href: `#${string}`; label: string };
+/** `#…` = Abschnitt der Startseite, `/…` = eigene Seite. */
+export type NavItem = { href: `#${string}` | `/${string}`; label: string };
 
 export type Stat = { value: string; label: string };
 
@@ -40,7 +41,8 @@ export type Project = {
   meta: string;
   description: string;
   metric?: string;
-  url: string;
+  /** Öffentliche Adresse – fehlt bei Projekten ohne Live-Seite. */
+  url?: string;
   displayDomain?: string;
   screenshot?: { url: string; alt: string; width?: number; height?: number };
   stack: string[];
@@ -90,6 +92,7 @@ export const nav: NavItem[] = [
   { href: "#vorgehen", label: "Vorgehen" },
   { href: "#analysen", label: "Analysen" },
   { href: "#gruender", label: "Über uns" },
+  { href: "/team", label: "Team" },
   { href: "#kenntnisse", label: "Kenntnisse" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -114,12 +117,6 @@ export const principles: { icon: IconName; label: [string, string] }[] = [
   { icon: "globe", label: ["Mehrsprachige", "Plattformen"] },
   { icon: "rocket", label: ["Eigene Produkte", "im Live-Betrieb"] },
 ];
-
-export const currentProject = {
-  name: "PrüfDesk",
-  text: "[Ein Satz: welches Problem PrüfDesk für wen löst]",
-  url: "https://pruefdesk.de",
-};
 
 export const about = {
   heading: { before: "Software, die aus dem", accent: "echten Ablauf", after: "entsteht." },

@@ -51,7 +51,7 @@ export const getProjects = cache(async (): Promise<Project[]> => {
       meta: d.meta,
       description: d.description,
       metric: d.metric ?? undefined,
-      url: d.url,
+      url: d.url || undefined,
       displayDomain: d.displayDomain ?? undefined,
       screenshot: toScreenshot(d.screenshot),
       stack: d.stack ?? [],

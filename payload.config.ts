@@ -10,6 +10,7 @@ import { tr } from "@payloadcms/translations/languages/tr";
 
 import { Media } from "./collections/Media";
 import { Projects } from "./collections/Projects";
+import { Team } from "./collections/Team";
 import { Users } from "./collections/Users";
 import { migrations } from "./migrations";
 import { seedOnFirstRun } from "./lib/seedProjects";
@@ -23,7 +24,7 @@ export default buildConfig({
     importMap: { baseDir: path.resolve(dirname) },
     meta: { titleSuffix: " · TechNS Admin" },
   },
-  collections: [Projects, Media, Users],
+  collections: [Projects, Team, Media, Users],
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
   db: postgresAdapter({

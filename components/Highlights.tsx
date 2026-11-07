@@ -1,4 +1,6 @@
-import { currentProject, principles, stats } from "@/content/site";
+import Link from "next/link";
+import { principles, stats } from "@/content/site";
+import { getProjects } from "@/lib/projects";
 import { Icon } from "./Icons";
 
 export function StatsBadge() {
@@ -35,15 +37,25 @@ export function Principles() {
   );
 }
 
-export function NowBand() {
+/** Kompakte Karten für alle Projekte mit Art „In Entwicklung“ – gepflegt im CMS. */
+export async function NowBand() {
+  const items = (await getProjects()).filter((p) => p.kind === "In Entwicklung");
+  if (items.length === 0) return null;
   return (
-    <div className="wrap">
-      <a className="now" href={currentProject.url} target="_blank" rel="noopener">
-        <span className="tag"><i />Aktuell in Entwicklung</span>
-        <strong>{currentProject.name}</strong>
-        <p>{currentProject.text}</p>
-        <span className="arrow"><Icon name="arrow" /></span>
-      </a>
+    <div className="wrap now-wrap">
+      <p className="now-label"><i />Aktuell in Entwicklung</p>
+      <div className="now-grid">
+        {items.map((p) => (
+          <Link key={p.slug} className="now-card" href={`/projekte/${p.slug}`}>
+            <span className="now-ic"><Icon name={p.group === "erp" ? "sync" : "code"} /></span>
+            <span className="now-text">
+              <strong>{p.name}</strong>
+              <span>{p.meta}</span>
+            </span>
+            <span className="arrow"><Icon name="arrow" /></span>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

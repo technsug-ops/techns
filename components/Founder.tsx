@@ -33,6 +33,7 @@ export function Founder() {
                 <div key={l.name}><dt>{l.name}</dt><dd>{l.level}</dd></div>
               ))}
             </dl>
+            <p className="founder-more"><a href="/team">Das ganze Team kennenlernen →</a></p>
           </div>
         </div>
       </div>
