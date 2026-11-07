@@ -149,8 +149,8 @@ export const de: Dictionary = {
     lede: "Anonymisierte Auszüge: Ausgangslage, Messung, Befund und Empfehlung. Vollständige Fassung auf Anfrage.",
     request: "Vollständige Analyse anfragen →",
     items: [
-      { meta: "[Branche] · [Jahr]", title: "[Titel der Analyse 1]", summary: "[Ausgangslage in einem Satz] → [zentraler Befund in einem Satz]" },
-      { meta: "[Branche] · [Jahr]", title: "[Titel der Analyse 2]", summary: "[Ausgangslage in einem Satz] → [zentraler Befund in einem Satz]" },
+      { meta: "E-Commerce · 2026", title: "Prozessinventar bei einem Multichannel-Händler", summary: "Über zehn Verkaufskanäle, die Abläufe steckten in den Köpfen einzelner Personen → 40 Prozesse nach APQC PCF erfasst; die größten Lücken lagen im Marktplatz-Accountmanagement, beim FBA-Nachschub und bei den Retouren." },
+      { meta: "E-Commerce · 2026", title: "Abgleich von Marktplatzverkäufen", summary: "Verkäufe wurden von Hand erfasst → der Marktplatzbericht zeigte ein Vielfaches der im System gebuchten Verkäufe; Gewinn- und Bestandszahlen waren nicht belastbar. Entscheidung: Daten direkt aus den Marktplatz-APIs." },
     ],
   },
   founder: {

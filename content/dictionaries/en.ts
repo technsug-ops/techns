@@ -149,8 +149,8 @@ export const en: Dictionary = {
     lede: "Anonymised excerpts: starting point, measurement, findings and recommendation. Full version on request.",
     request: "Request the full analysis →",
     items: [
-      { meta: "[Industry] · [Year]", title: "[Title of analysis 1]", summary: "[Starting point in one sentence] → [key finding in one sentence]" },
-      { meta: "[Industry] · [Year]", title: "[Title of analysis 2]", summary: "[Starting point in one sentence] → [key finding in one sentence]" },
+      { meta: "E-commerce · 2026", title: "Process inventory at a multichannel retailer", summary: "More than ten sales channels, with workflows living in individual people’s heads → 40 processes mapped to the APQC PCF; the biggest gaps were in marketplace account management, FBA replenishment and returns." },
+      { meta: "E-commerce · 2026", title: "Reconciling marketplace sales", summary: "Sales were entered by hand → the marketplace report showed several times the sales recorded in the system; profit and stock figures could not be trusted. Decision: data straight from the marketplace APIs." },
     ],
   },
   founder: {

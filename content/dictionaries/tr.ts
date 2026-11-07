@@ -149,8 +149,8 @@ export const tr: Dictionary = {
     lede: "Anonimleştirilmiş özetler: başlangıç durumu, ölçüm, bulgu ve öneri. Tam metni talep üzerine.",
     request: "Tam analizi talep et →",
     items: [
-      { meta: "[Sektör] · [Yıl]", title: "[1. analizin başlığı]", summary: "[Tek cümlede başlangıç durumu] → [tek cümlede ana bulgu]" },
-      { meta: "[Sektör] · [Yıl]", title: "[2. analizin başlığı]", summary: "[Tek cümlede başlangıç durumu] → [tek cümlede ana bulgu]" },
+      { meta: "E-ticaret · 2026", title: "Çok kanallı bir satıcıda süreç envanteri", summary: "On’dan fazla satış kanalı vardı, iş akışları kişilerin kafasındaydı → APQC PCF’ye göre 40 süreç çıkarıldı; en büyük açıklar pazaryeri hesap yönetimi, FBA stok yenileme ve iadelerde görüldü." },
+      { meta: "E-ticaret · 2026", title: "Pazaryeri satışlarının mutabakatı", summary: "Satışlar elle giriliyordu → pazaryeri raporu, sistemde kayıtlı satışların katbekat fazlasını gösteriyordu; kâr ve stok rakamlarına güvenilemiyordu. Karar: veriler doğrudan pazaryeri API’lerinden." },
     ],
   },
   founder: {
