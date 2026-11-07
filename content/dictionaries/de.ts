@@ -162,9 +162,9 @@ export const de: Dictionary = {
       "Als Gründer kenne ich die Wachstumsschmerzen. Als Prozessmanager weiß ich, wie man sie behebt.",
     ],
     stations: [
-      { period: "[20XX] – heute", role: "Geschäftsführer", org: "TechNS UG, Oberursel" },
-      { period: "[20XX] – heute", role: "Prozessmanager & Digitalisierung", org: "HafenX, Renningen" },
-      { period: "[20XX] – [20XX]", role: "Gründer", org: "euroTech Study – IT-Weiterbildung" },
+      { period: "2024 – heute", role: "Geschäftsführer", org: "TechNS UG, Oberursel" },
+      { period: "2025 – heute", role: "Prozessmanager & Digitalisierung", org: "HafenX, Renningen" },
+      { period: "2010 – 2025", role: "Gründer", org: "euroTech Study – IT-Weiterbildung" },
     ],
     languages: [
       { name: "Deutsch", level: "[Niveau, z. B. C1]" },

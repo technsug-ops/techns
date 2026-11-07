@@ -162,9 +162,9 @@ export const tr: Dictionary = {
       "Kurucu olarak büyüme sancılarını bilirim. Süreç yöneticisi olarak da onları nasıl gidereceğimi.",
     ],
     stations: [
-      { period: "[20XX] – bugün", role: "Genel Müdür", org: "TechNS UG, Oberursel" },
-      { period: "[20XX] – bugün", role: "Süreç Yöneticisi & Dijitalleşme", org: "HafenX, Renningen" },
-      { period: "[20XX] – [20XX]", role: "Kurucu", org: "euroTech Study – BT eğitimleri" },
+      { period: "2024 – bugün", role: "Genel Müdür", org: "TechNS UG, Oberursel" },
+      { period: "2025 – bugün", role: "Süreç Yöneticisi & Dijitalleşme", org: "HafenX, Renningen" },
+      { period: "2010 – 2025", role: "Kurucu", org: "euroTech Study – BT eğitimleri" },
     ],
     languages: [
       { name: "Almanca", level: "[Seviye, ör. C1]" },

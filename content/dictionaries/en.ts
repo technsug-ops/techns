@@ -162,9 +162,9 @@ export const en: Dictionary = {
       "As a founder, I know the growing pains. As a process manager, I know how to fix them.",
     ],
     stations: [
-      { period: "[20XX] – today", role: "Managing Director", org: "TechNS UG, Oberursel" },
-      { period: "[20XX] – today", role: "Process Manager & Digitalisation", org: "HafenX, Renningen" },
-      { period: "[20XX] – [20XX]", role: "Founder", org: "euroTech Study – IT training" },
+      { period: "2024 – today", role: "Managing Director", org: "TechNS UG, Oberursel" },
+      { period: "2025 – today", role: "Process Manager & Digitalisation", org: "HafenX, Renningen" },
+      { period: "2010 – 2025", role: "Founder", org: "euroTech Study – IT training" },
     ],
     languages: [
       { name: "German", level: "[Level, e.g. C1]" },
