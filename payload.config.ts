@@ -12,6 +12,7 @@ import { Media } from "./collections/Media";
 import { Projects } from "./collections/Projects";
 import { Users } from "./collections/Users";
 import { migrations } from "./migrations";
+import { seedOnFirstRun } from "./lib/seedProjects";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -26,13 +27,14 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
   db: postgresAdapter({
-    pool: { connectionString: process.env.DATABASE_URL || "" },
+    pool: { connectionString: process.env.DATABASE_URL || process.env.POSTGRES_URL || "" },
     // Schema ändert sich nur über Migrationen (npm run migrate) – nie automatisch.
     push: false,
     // In Produktion (Vercel) werden ausstehende Migrationen beim Start automatisch ausgeführt.
     prodMigrations: migrations,
   }),
   sharp,
+  onInit: seedOnFirstRun,
   i18n: { supportedLanguages: { de, tr, en }, fallbackLanguage: "de" },
   plugins: [
     // Bilder in Vercel Blob speichern, sobald das Token gesetzt ist; lokal landen sie im Ordner /media.
