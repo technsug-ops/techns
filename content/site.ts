@@ -91,7 +91,8 @@ export const processIcons: IconName[] = ["measure", "decide", "anchor"];
 export const skillIcons: IconName[] = ["flow", "code", "sync", "measure"];
 
 export const founderLinks = {
-  portrait: undefined as string | undefined,
+  /** Porträt (public/images/team) – erscheint im Gründer-Abschnitt, in der Seitenleiste und als Ersatz auf der Team-Seite. */
+  portrait: "/images/team/halil.webp" as string | undefined,
   /** Index der Station mit Link (euroTech Study). */
   stationLinks: { 2: "https://eurotechstudy.com" } as Record<number, string>,
 };

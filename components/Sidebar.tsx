@@ -2,7 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import { localePath, type Locale } from "@/content/i18n";
-import { company, nav } from "@/content/site";
+import Image from "next/image";
+import { company, founderLinks, nav } from "@/content/site";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import type { ChromeLabels } from "./Header";
 import { Icon } from "./Icons";
@@ -40,7 +41,11 @@ export function Sidebar({ locale, labels }: { locale: Locale; labels: ChromeLabe
       <a className="btn btn-teal side-cta" href={`${home}#kontakt`}>{labels.projectInquiry}</a>
 
       <div className="person">
-        <span className="person-ava" aria-hidden="true">HY</span>
+        {founderLinks.portrait ? (
+          <Image className="person-ava" src={founderLinks.portrait} alt="" width={46} height={46} />
+        ) : (
+          <span className="person-ava" aria-hidden="true">HY</span>
+        )}
         <span>
           <small>{labels.contactPerson}</small>
           <b>{company.managingDirector}</b>

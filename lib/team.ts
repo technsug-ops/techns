@@ -4,6 +4,7 @@ import { getPayload } from "payload";
 import { cache } from "react";
 import type { Locale } from "@/content/i18n";
 import type { Media } from "@/payload-types";
+import { company, founderLinks } from "@/content/site";
 
 export type TeamMember = {
   id: number;
@@ -38,7 +39,12 @@ export const getTeam = cache(async (locale: Locale = "de"): Promise<TeamMember[]
       focus: d.focus ?? [],
       linkedin: d.linkedin ?? undefined,
       email: d.email ?? undefined,
-      photo: m?.url ? { url: m.url, alt: m.alt } : undefined,
+      photo: m?.url
+        ? { url: m.url, alt: m.alt }
+        : // Ohne Foto im CMS: Porträt aus public/images für den Geschäftsführer.
+          d.name === company.managingDirector && founderLinks.portrait
+          ? { url: founderLinks.portrait, alt: d.name }
+          : undefined,
     };
   });
 });
