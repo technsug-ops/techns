@@ -38,6 +38,8 @@ export type Project = {
   screenshot?: { url: string; alt: string; width?: number; height?: number };
   stack: string[];
   caseStudy: CaseBlock[];
+  /** Große Karte über die volle Breite. */
+  featured?: boolean;
 };
 
 /* ------------------------------------------------------------------ */
@@ -75,15 +77,15 @@ export const statValues = ["25.103", "5", "3", "18"] as const;
 export const principleIcons: IconName[] = ["measure", "api", "lock", "globe", "rocket"];
 
 export const services: { id: ServiceId; icon: IconName; tone: "mint" | "lavender" | "peach" | "gray"; proof: { label: string; href: `#${string}` } }[] = [
-  { id: "prozesse", icon: "flow", tone: "mint", proof: { label: "HafenX", href: "#projekt-hafenx" } },
+  { id: "prozesse", icon: "flow", tone: "mint", proof: { label: "Produktions-ERP", href: "#projekt-produktions-erp" } },
   { id: "software", icon: "code", tone: "lavender", proof: { label: "MentörDE, Kompass", href: "#projekt-mentorde" } },
   { id: "integration", icon: "sync", tone: "peach", proof: { label: "Bezirga", href: "#projekt-bezirga" } },
   { id: "daten", icon: "data", tone: "gray", proof: { label: "ApplyToGerman", href: "#projekt-applytogerman" } },
 ];
 
 export const projectGroups: { id: ProjectGroupId; icon: IconName; tone: "mint" | "gray"; columns: 2 | 3 }[] = [
-  { id: "erp", icon: "sync", tone: "mint", columns: 2 },
-  { id: "websites", icon: "globe", tone: "gray", columns: 3 },
+  { id: "erp", icon: "sync", tone: "mint", columns: 3 },
+  { id: "websites", icon: "globe", tone: "gray", columns: 2 },
 ];
 
 export const processIcons: IconName[] = ["measure", "decide", "anchor"];

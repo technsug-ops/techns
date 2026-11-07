@@ -70,8 +70,8 @@ export function CaseBlockView({ block }: { block: CaseBlock }) {
 
 export function ProjectCard({ project, locale, t }: I18nProps & { project: Project }) {
   return (
-    <article className="card" id={`projekt-${project.slug}`}>
-      <Screenshot project={project} t={t} sizes="(max-width: 900px) 100vw, 420px" />
+    <article className={project.featured ? "card card-featured" : "card"} id={`projekt-${project.slug}`}>
+      <Screenshot project={project} t={t} sizes={project.featured ? "(max-width: 900px) 100vw, 640px" : "(max-width: 900px) 100vw, 420px"} />
       <div className="card-body">
         <p className="meta"><span className="num">{project.number}</span>{project.meta}</p>
         <h3>{project.name}</h3>

@@ -60,6 +60,7 @@ export const getProjects = cache(async (locale: Locale = "de"): Promise<Project[
       screenshot: toScreenshot(d.screenshot),
       stack: d.stack ?? [],
       caseStudy: toCaseStudy(d.caseStudy),
+      featured: Boolean(d.featured),
     }));
 });
 

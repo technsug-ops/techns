@@ -3,6 +3,7 @@ import * as migration_20261107_102130_team_und_optionale_url from './20261107_10
 import * as migration_20261107_102200_inhalte from './20261107_102200_inhalte';
 import * as migration_20261107_102932_lokalisierung from './20261107_102932_lokalisierung';
 import * as migration_20261107_103100_uebersetzungen from './20261107_103100_uebersetzungen';
+import * as migration_20261107_161734_neuordnung from './20261107_161734_neuordnung';
 
 export const migrations = [
   {
@@ -23,11 +24,16 @@ export const migrations = [
   {
     up: migration_20261107_102932_lokalisierung.up,
     down: migration_20261107_102932_lokalisierung.down,
-    name: '20261107_102932_lokalisierung'
+    name: '20261107_102932_lokalisierung',
   },
   {
     up: migration_20261107_103100_uebersetzungen.up,
     down: migration_20261107_103100_uebersetzungen.down,
     name: '20261107_103100_uebersetzungen',
+  },
+  {
+    up: migration_20261107_161734_neuordnung.up,
+    down: migration_20261107_161734_neuordnung.down,
+    name: '20261107_161734_neuordnung'
   },
 ];

@@ -181,6 +181,10 @@ export interface Project {
    * Leer lassen → wird aus dem Namen erzeugt. Ergibt /projekte/<kürzel>.
    */
   slug?: string | null;
+  /**
+   * Karte über die ganze Breite des Abschnitts, mit großem Bild.
+   */
+  featured?: boolean | null;
   visible?: boolean | null;
   updatedAt: string;
   createdAt: string;
@@ -397,6 +401,7 @@ export interface ProjectsSelect<T extends boolean = true> {
             };
       };
   slug?: T;
+  featured?: T;
   visible?: T;
   updatedAt?: T;
   createdAt?: T;

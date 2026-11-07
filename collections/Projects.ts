@@ -166,6 +166,13 @@ export const Projects: CollectionConfig = {
       hooks: { beforeValidate: [formatSlug] },
     },
     {
+      name: "featured",
+      type: "checkbox",
+      label: "Großes Projekt (volle Breite)",
+      defaultValue: false,
+      admin: { position: "sidebar", description: "Karte über die ganze Breite des Abschnitts, mit großem Bild." },
+    },
+    {
       name: "visible",
       type: "checkbox",
       label: "Auf der Website anzeigen",
