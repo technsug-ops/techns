@@ -1,4 +1,6 @@
 import type { MigrateDownArgs, MigrateUpArgs } from "@payloadcms/db-postgres";
+import { seedProjects } from "../lib/seedProjects";
+import { ensureInhalte } from "./20261107_102200_inhalte";
 
 /**
  * Datenmigration: englische und türkische Fassungen der vorhandenen Projekte und des Teams.
@@ -134,6 +136,10 @@ const team = {
 };
 
 export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
+  // Leere Datenbank: deutsche Grundinhalte zuerst anlegen, damit es etwas zu übersetzen gibt.
+  await seedProjects(payload, req);
+  await ensureInhalte({ payload, req });
+
   for (const [slug, langs] of Object.entries(projects)) {
     const found = await payload.find({ collection: "projects", where: { slug: { equals: slug } }, limit: 1, depth: 0, req });
     const doc = found.docs[0];

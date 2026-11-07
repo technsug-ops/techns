@@ -11,9 +11,9 @@ export function Founder({ locale, t }: I18nProps) {
     <section id="gruender">
       <div className="wrap">
         <div className="founder">
-          <div className="avatar">
+          <div className={founderLinks.portrait ? "avatar avatar-photo" : "avatar"}>
             {founderLinks.portrait ? (
-              <Image src={founderLinks.portrait} alt={fmt(f.portraitAlt, { name })} fill sizes="180px" style={{ objectFit: "cover" }} />
+              <Image src={founderLinks.portrait} alt={fmt(f.portraitAlt, { name })} fill sizes="240px" style={{ objectFit: "cover", objectPosition: "center top" }} />
             ) : (
               <span>{f.portrait}<br />{name}</span>
             )}

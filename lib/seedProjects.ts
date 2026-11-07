@@ -1,4 +1,4 @@
-import type { Payload } from "payload";
+import type { Payload, PayloadRequest } from "payload";
 import seedData from "../scripts/seed-projects.json";
 
 type SeedBlock =
@@ -29,13 +29,14 @@ function toBlocks(blocks: SeedBlock[] = []) {
 }
 
 /** Legt die Startprojekte an; vorhandene (gleiches Kürzel) werden übersprungen. */
-export async function seedProjects(payload: Payload): Promise<number> {
+export async function seedProjects(payload: Payload, req?: PayloadRequest): Promise<number> {
   let created = 0;
   for (const p of seedData as SeedProject[]) {
-    const existing = await payload.find({ collection: "projects", where: { slug: { equals: p.slug } }, limit: 1, depth: 0 });
+    const existing = await payload.find({ collection: "projects", where: { slug: { equals: p.slug } }, limit: 1, depth: 0, req });
     if (existing.totalDocs > 0) continue;
     await payload.create({
       collection: "projects",
+      req,
       data: {
         name: p.name, slug: p.slug, group: p.group, kind: p.kind, meta: p.meta, description: p.description,
         metric: p.metric, url: p.url, displayDomain: p.displayDomain, stack: p.stack,

@@ -41,8 +41,8 @@ export function Sidebar({ locale, labels }: { locale: Locale; labels: ChromeLabe
       <a className="btn btn-teal side-cta" href={`${home}#kontakt`}>{labels.projectInquiry}</a>
 
       <div className="person">
-        {founderLinks.portrait ? (
-          <Image className="person-ava" src={founderLinks.portrait} alt="" width={46} height={46} />
+        {founderLinks.avatar ? (
+          <Image className="person-ava" src={founderLinks.avatar} alt="" width={46} height={46} />
         ) : (
           <span className="person-ava" aria-hidden="true">HY</span>
         )}
