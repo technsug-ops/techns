@@ -2,6 +2,7 @@ import "server-only";
 import config from "@payload-config";
 import { getPayload } from "payload";
 import { cache } from "react";
+import type { Locale } from "@/content/i18n";
 import type { Media } from "@/payload-types";
 
 export type TeamMember = {
@@ -15,7 +16,7 @@ export type TeamMember = {
   photo?: { url: string; alt: string };
 };
 
-export const getTeam = cache(async (): Promise<TeamMember[]> => {
+export const getTeam = cache(async (locale: Locale = "de"): Promise<TeamMember[]> => {
   const payload = await getPayload({ config });
   const { docs } = await payload.find({
     collection: "team",
@@ -23,6 +24,8 @@ export const getTeam = cache(async (): Promise<TeamMember[]> => {
     sort: "_order",
     limit: 100,
     depth: 1,
+    locale,
+    fallbackLocale: "de",
     overrideAccess: false,
   });
   return docs.map((d) => {

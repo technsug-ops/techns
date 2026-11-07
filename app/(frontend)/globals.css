@@ -412,3 +412,14 @@ footer{background:var(--gray);padding:64px 0 28px;font-size:15px}
 .founder-more{margin-top:18px}
 .founder-more a{font-weight:600;color:var(--teal-ink);text-underline-offset:4px}
 .no-url{font-size:14px;font-weight:500;color:var(--muted)}
+
+/* ===== Sprachumschalter ===== */
+.side-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.lang{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:var(--gray)}
+.lang a{min-width:34px;height:28px;padding:0 8px;display:inline-grid;place-items:center;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.02em;text-decoration:none;color:var(--muted);transition:background .2s,color .2s}
+.lang a:hover{color:var(--teal-deep)}
+.lang a.on{background:#fff;color:var(--teal-deep);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.top-right{display:flex;align-items:center;gap:8px}
+.lang-top{display:none}
+@media (max-width:980px){.lang-top{display:inline-flex}}
+@media (max-width:420px){.lang a{min-width:30px;padding:0 6px}}

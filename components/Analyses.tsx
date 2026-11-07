@@ -1,20 +1,21 @@
-import { analyses } from "@/content/site";
 import { Accent } from "./Accent";
+import type { I18nProps } from "./types";
 
-export function Analyses() {
+export function Analyses({ t }: I18nProps) {
+  const a = t.analyses;
   return (
     <section id="analysen" className="analyses">
       <div className="wrap">
-        <span className="eyebrow">Analysen</span>
-        <h2 className="h2"><Accent before="Growth-Management-" accent="Berichte" /></h2>
-        <p className="lede">Anonymisierte Auszüge: Ausgangslage, Messung, Befund und Empfehlung. Vollständige Fassung auf Anfrage.</p>
+        <span className="eyebrow">{a.eyebrow}</span>
+        <h2 className="h2"><Accent {...a.heading} /></h2>
+        <p className="lede">{a.lede}</p>
         <div className="reps">
-          {analyses.map((a) => (
-            <article key={a.title} className="rep">
-              <span className="m">{a.meta}</span>
-              <h3>{a.title}</h3>
-              <p>{a.summary}</p>
-              <a href="#kontakt">Vollständige Analyse anfragen →</a>
+          {a.items.map((item) => (
+            <article key={item.title} className="rep">
+              <span className="m">{item.meta}</span>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+              <a href="#kontakt">{a.request}</a>
             </article>
           ))}
         </div>

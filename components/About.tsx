@@ -1,7 +1,9 @@
-import { about } from "@/content/site";
+import { localePath } from "@/content/i18n";
 import { Accent } from "./Accent";
+import type { I18nProps } from "./types";
 
-export function About() {
+export function About({ locale, t }: I18nProps) {
+  const about = t.about;
   return (
     <section id="ueber">
       <div className="wrap about">
@@ -30,11 +32,11 @@ export function About() {
           </svg>
         </div>
         <div>
-          <span className="eyebrow">Über uns</span>
+          <span className="eyebrow">{about.eyebrow}</span>
           <h2 className="h2"><Accent {...about.heading} /></h2>
           <p className="lede" style={{ marginBottom: 20 }}>{about.lede}</p>
           <p>{about.body}</p>
-          <a className="btn btn-ink" href="#gruender" style={{ marginTop: 12 }}>Wer dahintersteht</a>
+          <a className="btn btn-ink" href={`${localePath(locale, "/")}#gruender`} style={{ marginTop: 12 }}>{about.cta}</a>
         </div>
       </div>
     </section>

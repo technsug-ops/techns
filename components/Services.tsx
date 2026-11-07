@@ -1,31 +1,36 @@
 import { services } from "@/content/site";
 import { Accent } from "./Accent";
 import { Icon } from "./Icons";
+import type { I18nProps } from "./types";
 
-export function Services() {
+export function Services({ t }: I18nProps) {
+  const s = t.services;
   return (
     <section id="leistungen" style={{ paddingTop: 24 }}>
       <div className="wrap">
         <div className="center">
-          <span className="eyebrow">Leistungen</span>
-          <h2 className="h2"><Accent before="Was wir für" accent="Sie" after="tun" /></h2>
-          <p className="lede">Vier Leistungsfelder – jedes belegt durch Systeme, die wir selbst gebaut haben und betreiben.</p>
+          <span className="eyebrow">{s.eyebrow}</span>
+          <h2 className="h2"><Accent {...s.heading} /></h2>
+          <p className="lede">{s.lede}</p>
         </div>
         <div className="services">
-          {services.map((s) => (
-            <a key={s.id} className={`svc tone-${s.tone}`} href={s.proof.href}>
-              <span className="ic"><Icon name={s.icon} /></span>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-              <ul>{s.points.map((p) => <li key={p}>{p}</li>)}</ul>
-              <span className="foot">
-                <span>Belegt durch <b>{s.proof.label}</b></span>
-                <span className="arrow"><Icon name="arrow" /></span>
-              </span>
-            </a>
-          ))}
+          {services.map((svc) => {
+            const item = s.items[svc.id];
+            return (
+              <a key={svc.id} className={`svc tone-${svc.tone}`} href={svc.proof.href}>
+                <span className="ic"><Icon name={svc.icon} /></span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <ul>{item.points.map((p) => <li key={p}>{p}</li>)}</ul>
+                <span className="foot">
+                  <span>{s.provenBy} <b>{svc.proof.label}</b></span>
+                  <span className="arrow"><Icon name="arrow" /></span>
+                </span>
+              </a>
+            );
+          })}
         </div>
-        <p className="center more-link"><a href="#kenntnisse">Alle Technologien ansehen →</a></p>
+        <p className="center more-link"><a href="#kenntnisse">{s.allTech}</a></p>
       </div>
     </section>
   );

@@ -4,9 +4,8 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook, CollectionCo
 async function revalidate(slugs: (string | undefined | null)[]) {
   try {
     const { revalidatePath } = await import("next/cache");
-    revalidatePath("/");
-    for (const s of slugs) if (s) revalidatePath(`/projekte/${s}`);
-    revalidatePath("/sitemap.xml");
+    // Alle Sprachfassungen (/, /en, /tr) samt Detailseiten neu erzeugen.
+    revalidatePath("/", "layout");
   } catch {
     // Außerhalb von Next.js (z. B. Seed-Skript) gibt es nichts zu revalidieren.
   }
@@ -86,11 +85,11 @@ export const Projects: CollectionConfig = {
           options: ["Eigenes Produkt", "Kundenprojekt", "Kundenprojekt · laufend", "In Entwicklung"],
           admin: { width: "40%" },
         },
-        { name: "meta", type: "text", label: "Kategoriezeile", required: true, admin: { width: "60%", placeholder: "z. B. SaaS · E-Commerce" } },
+        { name: "meta", type: "text", label: "Kategoriezeile", required: true, localized: true, admin: { width: "60%", placeholder: "z. B. SaaS · E-Commerce" } },
       ],
     },
-    { name: "description", type: "textarea", label: "Kurzbeschreibung", required: true, maxLength: 320 },
-    { name: "metric", type: "text", label: "Kennzahl (optional)", admin: { placeholder: "z. B. 460 Hochschulen · 25.103 Studiengänge" } },
+    { name: "description", type: "textarea", label: "Kurzbeschreibung", required: true, localized: true, maxLength: 320 },
+    { name: "metric", type: "text", label: "Kennzahl (optional)", localized: true, admin: { placeholder: "z. B. 460 Hochschulen · 25.103 Studiengänge" } },
     {
       type: "row",
       fields: [
@@ -118,6 +117,7 @@ export const Projects: CollectionConfig = {
     {
       name: "caseStudy",
       type: "blocks",
+      localized: true,
       label: "Fallstudie (Detailseite)",
       labels: { singular: "Abschnitt", plural: "Abschnitte" },
       blocks: [

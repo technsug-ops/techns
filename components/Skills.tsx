@@ -1,24 +1,26 @@
-import { skills } from "@/content/site";
+import { skillIcons } from "@/content/site";
 import { Accent } from "./Accent";
 import { Icon } from "./Icons";
+import type { I18nProps } from "./types";
 
-export function Skills() {
+export function Skills({ t }: I18nProps) {
+  const s = t.skills;
   return (
     <section id="kenntnisse">
       <div className="wrap">
         <div className="sec-head">
           <div>
-            <span className="eyebrow">Kenntnisse</span>
-            <h2 className="h2"><Accent before="Unser" accent="Werkzeugkasten" /></h2>
-            <p className="lede">Womit wir in den Projekten oben tatsächlich arbeiten – ohne Prozentbalken, dafür mit Belegen.</p>
+            <span className="eyebrow">{s.eyebrow}</span>
+            <h2 className="h2"><Accent {...s.heading} /></h2>
+            <p className="lede">{s.lede}</p>
           </div>
         </div>
         <div className="skills">
-          {skills.map((g) => (
+          {s.groups.map((g, i) => (
             <div key={g.title} className="skill">
-              <span className="ic"><Icon name={g.icon} /></span>
+              <span className="ic"><Icon name={skillIcons[i] ?? "code"} /></span>
               <h3>{g.title}</h3>
-              <ul>{g.items.map((i) => <li key={i}>{i}</li>)}</ul>
+              <ul>{g.items.map((item) => <li key={item}>{item}</li>)}</ul>
             </div>
           ))}
         </div>

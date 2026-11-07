@@ -2,6 +2,7 @@ import "server-only";
 import config from "@payload-config";
 import { getPayload } from "payload";
 import { cache } from "react";
+import type { Locale } from "@/content/i18n";
 import type { CaseBlock, Project, ProjectGroupId } from "@/content/site";
 import type { Media, Project as ProjectDoc } from "@/payload-types";
 
@@ -27,10 +28,11 @@ function toCaseStudy(blocks: ProjectDoc["caseStudy"]): CaseBlock[] {
 }
 
 /**
- * Alle sichtbaren Projekte in der im CMS festgelegten Reihenfolge.
+ * Alle sichtbaren Projekte in der im CMS festgelegten Reihenfolge, in der gewünschten Sprache
+ * (fehlende Übersetzungen fallen auf Deutsch zurück).
  * `cache` sorgt dafür, dass pro Seitenaufruf nur einmal abgefragt wird.
  */
-export const getProjects = cache(async (): Promise<Project[]> => {
+export const getProjects = cache(async (locale: Locale = "de"): Promise<Project[]> => {
   const payload = await getPayload({ config });
   const { docs } = await payload.find({
     collection: "projects",
@@ -38,6 +40,8 @@ export const getProjects = cache(async (): Promise<Project[]> => {
     sort: "_order",
     limit: 200,
     depth: 1,
+    locale,
+    fallbackLocale: "de",
     overrideAccess: false,
   });
   return docs
@@ -59,6 +63,6 @@ export const getProjects = cache(async (): Promise<Project[]> => {
     }));
 });
 
-export async function getProjectsByGroup(group: ProjectGroupId) {
-  return (await getProjects()).filter((p) => p.group === group);
+export async function getProjectsByGroup(group: ProjectGroupId, locale: Locale = "de") {
+  return (await getProjects(locale)).filter((p) => p.group === group);
 }

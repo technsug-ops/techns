@@ -1,48 +1,54 @@
 "use client";
 
-import { company, founder, nav } from "@/content/site";
 import { usePathname } from "next/navigation";
+import { localePath, type Locale } from "@/content/i18n";
+import { company, nav } from "@/content/site";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import { navHref, sectionIds } from "./navHref";
+import type { ChromeLabels } from "./Header";
 import { Icon } from "./Icons";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Logo } from "./Logo";
+import { isActive, navHref, sectionIds } from "./navHref";
 
 /** Feste Seitenleiste auf großen Bildschirmen (ab 1180 px). */
-export function Sidebar({ base = "" }: { base?: string }) {
+export function Sidebar({ locale, labels }: { locale: Locale; labels: ChromeLabels }) {
   const section = useActiveSection(sectionIds(nav));
-  const pathname = usePathname();
-  const isOn = (href: string) => (href.startsWith("/") ? pathname === href : pathname === "/" && section === href.slice(1));
+  const pathname = usePathname() || "/";
+  const home = localePath(locale, "/");
   return (
-    <aside className="side" aria-label="Seitenleiste">
-      <a className="brand" href={`${base}#start`} aria-label="TechNS – zum Seitenanfang">
-        <Logo className="brand-mark" />
-        TechNS
-      </a>
-      <p className="side-claim">{company.claim}</p>
+    <aside className="side" aria-label={labels.sections}>
+      <div className="side-top">
+        <a className="brand" href={`${home}#start`} aria-label={labels.toTop}>
+          <Logo className="brand-mark" />
+          TechNS
+        </a>
+        <LanguageSwitcher locale={locale} label={labels.language} />
+      </div>
+      <p className="side-claim">{labels.claim}</p>
 
-      <nav className="side-nav" aria-label="Abschnitte">
+      <nav className="side-nav" aria-label={labels.sections}>
         {nav.map((item) => {
-          const on = isOn(item.href);
+          const on = isActive(item, pathname, section);
           return (
-            <a key={item.href} href={navHref(item, base)} className={on ? "active" : undefined} aria-current={on ? "location" : undefined}>
-              {item.label}
+            <a key={item.key} href={navHref(item, locale)} className={on ? "active" : undefined} aria-current={on ? "location" : undefined}>
+              {labels.nav[item.key]}
             </a>
           );
         })}
       </nav>
 
-      <a className="btn btn-teal side-cta" href={`${base}#kontakt`}>Projekt anfragen</a>
+      <a className="btn btn-teal side-cta" href={`${home}#kontakt`}>{labels.projectInquiry}</a>
 
       <div className="person">
         <span className="person-ava" aria-hidden="true">HY</span>
         <span>
-          <small>Ihr Ansprechpartner</small>
-          <b>{founder.name}</b>
+          <small>{labels.contactPerson}</small>
+          <b>{company.managingDirector}</b>
           <a href={company.phone.href}>{company.phone.display}</a>
         </span>
       </div>
 
-      <p className="side-loc"><Icon name="pin" /> Oberursel bei Frankfurt</p>
+      <p className="side-loc"><Icon name="pin" /> {labels.location}</p>
     </aside>
   );
 }

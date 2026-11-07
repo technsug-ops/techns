@@ -25,6 +25,16 @@ export default buildConfig({
     meta: { titleSuffix: " · TechNS Admin" },
   },
   collections: [Projects, Team, Media, Users],
+  // Inhalte pro Sprache pflegen; fehlt eine Übersetzung, wird Deutsch angezeigt.
+  localization: {
+    locales: [
+      { label: "Deutsch", code: "de" },
+      { label: "English", code: "en" },
+      { label: "Türkçe", code: "tr" },
+    ],
+    defaultLocale: "de",
+    fallback: true,
+  },
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
   db: postgresAdapter({

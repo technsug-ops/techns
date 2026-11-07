@@ -3,8 +3,8 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook, CollectionCo
 async function revalidateTeam() {
   try {
     const { revalidatePath } = await import("next/cache");
-    revalidatePath("/team");
-    revalidatePath("/");
+    // Alle Sprachfassungen (/, /en, /tr) samt Detailseiten neu erzeugen.
+    revalidatePath("/", "layout");
   } catch {
     // außerhalb von Next.js nichts zu tun
   }
@@ -41,12 +41,12 @@ export const Team: CollectionConfig = {
       type: "row",
       fields: [
         { name: "name", type: "text", label: "Name", required: true, admin: { width: "50%" } },
-        { name: "role", type: "text", label: "Rolle", required: true, admin: { width: "50%", placeholder: "z. B. Softwareentwickler" } },
+        { name: "role", type: "text", label: "Rolle", required: true, localized: true, admin: { width: "50%", placeholder: "z. B. Softwareentwickler" } },
       ],
     },
     { name: "photo", type: "upload", relationTo: "media", label: "Foto (quadratisch)" },
-    { name: "bio", type: "textarea", label: "Kurzprofil", maxLength: 600 },
-    { name: "focus", type: "text", hasMany: true, label: "Schwerpunkte", admin: { description: "Eingabe + Enter fügt ein Etikett hinzu." } },
+    { name: "bio", type: "textarea", label: "Kurzprofil", localized: true, maxLength: 600 },
+    { name: "focus", type: "text", hasMany: true, localized: true, label: "Schwerpunkte", admin: { description: "Eingabe + Enter fügt ein Etikett hinzu." } },
     {
       type: "row",
       fields: [
