@@ -1,0 +1,190 @@
+[
+  {
+    "slug": "bezirga",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "MySQL",
+      "Marktplatz-APIs"
+    ],
+    "name": "Bezirga",
+    "kind": "Eigenes Produkt",
+    "meta": "SaaS · E-Commerce",
+    "description": "ERP für Marktplatzhändler: Bestellungen, Bestand und Retouren direkt aus den Marktplatz-APIs – mit dem echten Nettogewinn jedes einzelnen Verkaufs.",
+    "metric": "Live bei Pilotkunde · mandantenfähig im Aufbau",
+    "url": "https://bezirga.com",
+    "caseStudy": {
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Problem",
+          "body": "Verkäufe wurden von Hand erfasst. Ein Abgleich zeigte, dass der Marktplatzbericht ein Vielfaches der im System erfassten Verkäufe auswies – Gewinn und Bestand waren damit nicht belastbar."
+        },
+        {
+          "type": "text",
+          "title": "Entscheidung",
+          "body": "Bestellungen, Retouren und Abrechnungen kommen direkt aus den Marktplatz-APIs. Jede Phase beginnt mit einem Messbericht, keine Phase wird übersprungen."
+        },
+        {
+          "type": "list",
+          "title": "Was das System kann",
+          "items": [
+            "Mehrere Marktplätze per API angebunden",
+            "Nettogewinn je Verkauf nach Provision, Fracht und Steuer",
+            "FIFO-Bewertung mit Partieverfolgung",
+            "Konsistenzprüfungen, bevor Daten geschrieben werden"
+          ]
+        }
+      ]
+    },
+    "group": "erp"
+  },
+  {
+    "slug": "mentorde",
+    "stack": [
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "Alpine.js"
+    ],
+    "name": "MentörDE-Plattform",
+    "kind": "Kundenprojekt",
+    "meta": "ERP · Bildungsberatung",
+    "description": "ERP einer Bildungsberatung: sechs Portale von Studierenden über Berater bis Vertriebspartner, mit Rollen, Rechten und Partnerprogramm.",
+    "url": "https://panel.mentorde.com/platform",
+    "displayDomain": "panel.mentorde.com",
+    "group": "erp"
+  },
+  {
+    "slug": "pruefdesk",
+    "stack": [],
+    "name": "PrüfDesk",
+    "kind": "In Entwicklung",
+    "meta": "[Kategorie]",
+    "description": "[Ein bis zwei Sätze: welches Problem PrüfDesk für wen löst]",
+    "url": "https://pruefdesk.de",
+    "group": "erp"
+  },
+  {
+    "slug": "hafenx",
+    "stack": [
+      "PlentyONE",
+      "APQC PCF"
+    ],
+    "name": "HafenX",
+    "kind": "Kundenprojekt · laufend",
+    "meta": "Prozessdigitalisierung · PlentyONE",
+    "description": "Prozessmanagement und Digitalisierung bei einem Multichannel-Händler und PlentyONE-Partner: Abläufe erfassen, ordnen und in Systeme überführen.",
+    "metric": "[Kennzahl nach Freigabe]",
+    "url": "https://hafenx.com",
+    "caseStudy": {
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Ausgangslage",
+          "body": "Viele Kanäle, ein Lager, wachsende Abstimmungslast – Wissen steckte in Köpfen statt in Prozessen."
+        },
+        {
+          "type": "text",
+          "title": "Vorgehen",
+          "body": "Prozessinventar nach dem APQC Process Classification Framework: jeder Prozess mit Auslöser, Verantwortlichem, Hauptdaten und Abhängigkeiten – die Grundlage für eine KI-gestützte Betriebsschicht."
+        }
+      ]
+    },
+    "group": "erp"
+  },
+  {
+    "slug": "applytogerman",
+    "stack": [
+      "Wikidata",
+      "Offene Daten",
+      "SEO",
+      "Mehrsprachig"
+    ],
+    "name": "ApplyToGerman",
+    "kind": "Eigenes Produkt",
+    "meta": "Datenplattform · Bildung",
+    "description": "Studieren in Deutschland auf einer Plattform: Hochschulen, Studiengänge, Stipendien und Entscheidungswerkzeuge – gespeist aus offiziellen Quellen, in drei Sprachen.",
+    "metric": "460 Hochschulen · 25.103 Studiengänge",
+    "url": "https://applytogerman.com",
+    "caseStudy": {
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Problem",
+          "body": "Studiengänge stehen beim DAAD, die Anerkennung bei Anabin, Zulassungsdetails im Hochschulkompass, Berufsbilder bei BERUFENET. Jede Quelle nutzt eigene Bezeichnungen für dieselbe Hochschule."
+        },
+        {
+          "type": "text",
+          "title": "Entscheidung",
+          "body": "Jede Hochschule wird über ihre Wikidata-Kennung identifiziert. So lassen sich die Quellen täglich neu einlesen, ohne Dubletten zu erzeugen."
+        },
+        {
+          "type": "flow",
+          "title": "Architektur",
+          "steps": [
+            "Quellen: DAAD, Wikidata, BERUFENET, Anabin, Hochschulkompass",
+            "Abgleich über Wikidata-IDs, tägliche Aktualisierung",
+            "460 Hochschulen · 25.103 Studiengänge · 209 Städte",
+            "Such- & Vergleichsseiten, Werkzeuge, öffentliche API, KI-Assistent"
+          ],
+          "coreIndex": 2
+        },
+        {
+          "type": "text",
+          "title": "Ergebnis",
+          "body": "629 beantwortete Fragen in 14 Themen · [+X % organischer Traffic] · [X indexierte Seiten]"
+        }
+      ]
+    },
+    "group": "websites"
+  },
+  {
+    "slug": "kompass",
+    "stack": [
+      "Schulportal Hessen",
+      "WebUntis",
+      "Verschlüsselung"
+    ],
+    "name": "Hausaufgaben-Kompass",
+    "kind": "Eigenes Produkt",
+    "meta": "Web-App · Beta",
+    "description": "Holt Aufgaben aus Schulportal Hessen und WebUntis und plant den Nachmittag. Eigener Schlüssel je Familie, optional Ende-zu-Ende verschlüsselt.",
+    "metric": "18 Sprachen · Server in Frankfurt",
+    "url": "https://ha-kompass.de",
+    "group": "websites"
+  },
+  {
+    "slug": "foundercheck",
+    "stack": [],
+    "name": "Gründungs-Check",
+    "kind": "Eigenes Produkt",
+    "meta": "Web-App · Gründung",
+    "description": "Ehrlicher Bericht zur Geschäftsidee in Deutschland: Meisterpflicht, Erlaubnisse, Aufenthaltsstatus, Rechtsform, Break-even und ein 30-Tage-Startplan – in einem Durchlauf.",
+    "metric": "Kostenlos in der Testphase",
+    "url": "https://foundercheck.de",
+    "group": "websites"
+  },
+  {
+    "slug": "b2b-klar",
+    "stack": [],
+    "name": "B2B-klar",
+    "kind": "Eigenes Produkt",
+    "meta": "[Kategorie]",
+    "description": "[Ein bis zwei Sätze: welches Problem B2B-klar für wen löst]",
+    "url": "https://b2b-klar.de",
+    "group": "websites"
+  },
+  {
+    "slug": "tokali",
+    "stack": [],
+    "name": "Tokalı Hukuk",
+    "kind": "Kundenprojekt",
+    "meta": "Unternehmenswebsite · Kanzlei",
+    "description": "Markenauftritt und Website für eine Anwaltskanzlei: Leistungsbereiche, Prozessdarstellung und Datenschutztexte.",
+    "url": "https://tokali-hukuk.vercel.app/",
+    "displayDomain": "tokali-hukuk.com",
+    "group": "websites"
+  }
+]
