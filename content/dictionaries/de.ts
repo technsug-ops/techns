@@ -164,7 +164,7 @@ export const de: Dictionary = {
     stations: [
       { period: "2024 – heute", role: "Geschäftsführer", org: "TechNS UG, Oberursel" },
       { period: "2025 – heute", role: "Prozessmanager & Digitalisierung", org: "HafenX, Renningen" },
-      { period: "2010 – 2025", role: "Gründer", org: "euroTech Study – IT-Weiterbildung" },
+      { period: "2019 – 2025", role: "Gründer", org: "euroTech Study – IT-Weiterbildung" },
     ],
     languages: [
       { name: "Deutsch", level: "B2" },
