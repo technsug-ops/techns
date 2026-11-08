@@ -25,5 +25,5 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Verwaltung, API, Next-Interna und Dateien (alles mit Punkt) bleiben unberührt.
-  matcher: ["/((?!admin|api|_next|.*\\..*).*)"],
+  matcher: ["/((?!admin|api|_next|screenshots|.*\\..*).*)"],
 };

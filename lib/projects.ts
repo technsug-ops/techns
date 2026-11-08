@@ -57,7 +57,8 @@ export const getProjects = cache(async (locale: Locale = "de"): Promise<Project[
       metric: d.metric ?? undefined,
       url: d.url || undefined,
       displayDomain: d.displayDomain ?? undefined,
-      screenshot: toScreenshot(d.screenshot),
+      // Eigenes Bild aus dem CMS hat Vorrang, sonst automatischer Screenshot der Live-Seite.
+      screenshot: toScreenshot(d.screenshot) ?? (d.url ? { url: `/screenshots/${d.slug}`, alt: "", width: 1440, height: 900 } : undefined),
       stack: d.stack ?? [],
       caseStudy: toCaseStudy(d.caseStudy),
       featured: Boolean(d.featured),

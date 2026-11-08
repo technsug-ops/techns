@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
-    localPatterns: [{ pathname: "/api/media/file/**" }, { pathname: "/images/**" }],
+    minimumCacheTTL: 604800,
+    localPatterns: [{ pathname: "/api/media/file/**" }, { pathname: "/images/**" }, { pathname: "/screenshots/**" }],
     remotePatterns: [{ protocol: "https", hostname: "*.public.blob.vercel-storage.com" }],
   },
   webpack: (webpackConfig) => {
