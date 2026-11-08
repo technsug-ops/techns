@@ -256,7 +256,47 @@ export const en: Dictionary = {
   },
   privacy: {
     title: "Privacy policy",
-    note: "Placeholder: a privacy policy is required by law and must be completed and legally reviewed before launch (hosting provider, server logs, contact requests, analytics if any).",
+    controller: "Controller",
+    updated: "Last updated: November 2026. In case of doubt, the German version applies.",
+    sections: [
+      { title: "Overview", paragraphs: [
+        "We process personal data only to the extent necessary to operate this website and to communicate with you, in line with the General Data Protection Regulation (GDPR) and the German Federal Data Protection Act (BDSG).",
+        "This website uses no analytics or tracking tools, no advertising cookies, no social media plugins and no embedded third-party content (such as videos or maps).",
+      ] },
+      { title: "Hosting and server log files", paragraphs: [
+        "This website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. When you visit the website, Vercel automatically processes technical data sent by your browser: IP address, date and time of access, requested address, referrer URL, browser and operating system, and the response status code.",
+        "This data is needed to deliver the website, keep it secure and analyse errors. The legal basis is our legitimate interest in secure and stable operation (Art. 6(1)(f) GDPR). Log data is deleted automatically after a short period.",
+        "We have a data processing agreement with Vercel (Art. 28 GDPR). Vercel is certified under the EU-US Data Privacy Framework, so transfers to the USA are covered by an adequacy decision of the European Commission (Art. 45 GDPR). The EU standard contractual clauses apply in addition.",
+      ] },
+      { title: "Content, database and images", paragraphs: [
+        "The content of this website (texts, project descriptions, images) is stored in a database and file storage provided by Neon, Inc. and Vercel Inc. No personal data of visitors is stored there. Images are delivered through our own server; your browser does not connect to third parties for them.",
+      ] },
+      { title: "Cookies and fonts", paragraphs: [
+        "This website does not set any cookies for visitors. Only the password-protected admin area uses a technically necessary login cookie (Section 25(2) TDDDG); this area is accessible to our team only.",
+        "All fonts are hosted locally on our server. Visiting the website does not create a connection to Google or other font providers.",
+      ] },
+      { title: "SSL/TLS encryption", paragraphs: [
+        "For security reasons this website uses SSL/TLS encryption. You can recognise an encrypted connection by “https://” in your browser’s address bar.",
+      ] },
+      { title: "Contact by email or phone", paragraphs: [
+        "If you contact us by email or phone, we process the information you provide (e.g. name, email address, phone number and the content of your enquiry) to handle your request. The legal basis is Art. 6(1)(b) GDPR where your enquiry relates to a contract or pre-contractual steps, otherwise our legitimate interest in answering enquiries (Art. 6(1)(f) GDPR).",
+        "Our mailbox is operated by IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Germany. We delete your data once it is no longer needed for handling your request; statutory retention obligations (in particular under commercial and tax law) remain unaffected.",
+      ] },
+      { title: "Links to other websites", paragraphs: [
+        "This website contains links to the websites of our projects and clients. A connection to such a website is only established when you click the link. The respective operator is responsible for its content and data processing.",
+      ] },
+      { title: "Your rights", paragraphs: [
+        "You have the right of access to your stored data (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18) and data portability (Art. 20). You can withdraw any consent at any time with effect for the future (Art. 7(3) GDPR).",
+        "Right to object: where we process data on the basis of Art. 6(1)(f) GDPR, you may object at any time on grounds relating to your particular situation (Art. 21 GDPR).",
+        "For any data protection request, an informal message to the contact details above is sufficient.",
+      ] },
+      { title: "Right to lodge a complaint", paragraphs: [
+        "You have the right to lodge a complaint with a data protection supervisory authority. The authority responsible for us is: Der Hessische Beauftragte für Datenschutz und Informationsfreiheit, Gustav-Stresemann-Ring 1, 65189 Wiesbaden, Germany.",
+      ] },
+      { title: "No automated decision-making", paragraphs: [
+        "No automated decision-making, including profiling within the meaning of Art. 22 GDPR, takes place.",
+      ] },
+    ],
   },
   notFound: { title: "Page not found", text: "This page doesn't exist (anymore).", cta: "Back to home" },
 };

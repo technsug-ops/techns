@@ -256,7 +256,47 @@ export const tr: Dictionary = {
   },
   privacy: {
     title: "Gizlilik politikası",
-    note: "Yer tutucu: Gizlilik politikası yasal olarak zorunludur ve yayına almadan önce tamamlanıp hukuki olarak kontrol ettirilmelidir (barındırma sağlayıcısı, sunucu kayıtları, iletişim talepleri, varsa analiz aracı).",
+    controller: "Veri sorumlusu",
+    updated: "Son güncelleme: Kasım 2026. Tereddüt hâlinde Almanca metin geçerlidir.",
+    sections: [
+      { title: "Genel bakış", paragraphs: [
+        "Kişisel verileri yalnızca bu web sitesinin işletilmesi ve sizinle iletişim için gerekli olduğu ölçüde, Genel Veri Koruma Tüzüğü (GDPR/DSGVO) ve Alman Federal Veri Koruma Kanunu (BDSG) çerçevesinde işliyoruz.",
+        "Bu web sitesi analiz veya izleme araçları, reklam çerezleri, sosyal medya eklentileri ya da üçüncü taraflara ait gömülü içerikler (video, harita vb.) kullanmaz.",
+      ] },
+      { title: "Barındırma ve sunucu kayıtları", paragraphs: [
+        "Bu web sitesi Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, ABD tarafından barındırılmaktadır. Siteyi ziyaret ettiğinizde Vercel, tarayıcınızın gönderdiği teknik verileri otomatik olarak işler: IP adresi, erişim tarihi ve saati, açılan adres, yönlendiren adres (referrer), tarayıcı ve işletim sistemi ile yanıt durum kodu.",
+        "Bu veriler sitenin sunulması, güvenliğinin sağlanması ve hataların analizi için gereklidir. Hukuki dayanak, güvenli ve kesintisiz işletime yönelik meşru menfaatimizdir (GDPR md. 6/1-f). Kayıtlar kısa süre sonra otomatik olarak silinir.",
+        "Vercel ile bir veri işleme sözleşmesi bulunmaktadır (GDPR md. 28). Vercel, AB-ABD Veri Gizliliği Çerçevesi (Data Privacy Framework) kapsamında sertifikalıdır; ABD'ye aktarım bu nedenle Avrupa Komisyonu'nun yeterlilik kararına dayanır (GDPR md. 45). Ek olarak AB standart sözleşme maddeleri uygulanır.",
+      ] },
+      { title: "İçerik, veritabanı ve görseller", paragraphs: [
+        "Bu sitenin içerikleri (metinler, proje açıklamaları, görseller) hizmet sağlayıcılarımız Neon, Inc. ve Vercel Inc.'in veritabanı ve dosya depolama hizmetlerinde tutulur. Burada ziyaretçilere ait kişisel veri saklanmaz. Görseller kendi sunucumuz üzerinden sunulur; tarayıcınız bunun için üçüncü taraflara bağlanmaz.",
+      ] },
+      { title: "Çerezler ve yazı tipleri", paragraphs: [
+        "Bu web sitesi ziyaretçiler için çerez kullanmaz. Yalnızca şifreyle korunan yönetim alanı, oturum açmak için teknik olarak zorunlu bir çerez kullanır (TDDDG § 25/2); bu alana yalnızca ekibimiz erişebilir.",
+        "Tüm yazı tipleri kendi sunucumuzda barındırılır. Siteyi ziyaret ettiğinizde Google'a veya başka yazı tipi sağlayıcılarına bağlantı kurulmaz.",
+      ] },
+      { title: "SSL/TLS şifreleme", paragraphs: [
+        "Bu web sitesi güvenlik nedeniyle SSL/TLS şifrelemesi kullanır. Şifreli bağlantıyı tarayıcınızın adres çubuğundaki “https://” ifadesinden anlayabilirsiniz.",
+      ] },
+      { title: "E-posta veya telefonla iletişim", paragraphs: [
+        "Bize e-posta veya telefonla ulaştığınızda, talebinizi yanıtlamak için verdiğiniz bilgileri (örneğin ad, e-posta adresi, telefon numarası ve talebinizin içeriği) işleriz. Talebiniz bir sözleşme veya sözleşme öncesi adımlarla ilgiliyse hukuki dayanak GDPR md. 6/1-b, aksi hâlde talepleri yanıtlamaya yönelik meşru menfaatimizdir (GDPR md. 6/1-f).",
+        "E-posta kutumuz IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Almanya tarafından işletilmektedir. Verilerinizi, talebinizin işlenmesi için artık gerekli olmadığında sileriz; yasal saklama yükümlülükleri (özellikle ticaret ve vergi hukuku) saklıdır.",
+      ] },
+      { title: "Diğer web sitelerine bağlantılar", paragraphs: [
+        "Bu sitede projelerimizin ve müşterilerimizin web sitelerine bağlantılar bulunur. Bu sitelere ancak bağlantıya tıkladığınızda bağlantı kurulur. Söz konusu sitelerin içeriğinden ve veri işlemesinden ilgili işletmeci sorumludur.",
+      ] },
+      { title: "Haklarınız", paragraphs: [
+        "Kayıtlı verilerinize ilişkin bilgi alma (GDPR md. 15), düzeltme (md. 16), silme (md. 17), işlemenin kısıtlanması (md. 18) ve veri taşınabilirliği (md. 20) haklarına sahipsiniz. Verdiğiniz bir onayı ileriye dönük olarak her zaman geri alabilirsiniz (GDPR md. 7/3).",
+        "İtiraz hakkı: Verileri GDPR md. 6/1-f'ye dayanarak işlediğimiz durumlarda, özel durumunuzdan kaynaklanan nedenlerle her zaman itiraz edebilirsiniz (GDPR md. 21).",
+        "Veri korumayla ilgili tüm talepleriniz için yukarıdaki iletişim bilgilerine kısa bir mesaj göndermeniz yeterlidir.",
+      ] },
+      { title: "Şikâyet hakkı", paragraphs: [
+        "Bir veri koruma denetim makamına şikâyette bulunma hakkınız vardır. Bizim için yetkili makam: Der Hessische Beauftragte für Datenschutz und Informationsfreiheit, Gustav-Stresemann-Ring 1, 65189 Wiesbaden, Almanya.",
+      ] },
+      { title: "Otomatik karar alma yoktur", paragraphs: [
+        "GDPR md. 22 anlamında profil çıkarma dâhil otomatik karar alma yapılmamaktadır.",
+      ] },
+    ],
   },
   notFound: { title: "Sayfa bulunamadı", text: "Bu sayfa mevcut değil (artık).", cta: "Ana sayfaya dön" },
 };

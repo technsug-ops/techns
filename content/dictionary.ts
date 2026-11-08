@@ -98,6 +98,6 @@ export interface Dictionary {
     /** Weitere Abschnitte (Streitbeilegung, Haftung). */
     sections: { title: string; text: string }[];
   };
-  privacy: { title: string; note: string };
+  privacy: { title: string; controller: string; updated: string; sections: { title: string; paragraphs: string[] }[] };
   notFound: { title: string; text: string; cta: string };
 }

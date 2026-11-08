@@ -256,7 +256,47 @@ export const de: Dictionary = {
   },
   privacy: {
     title: "Datenschutzerklärung",
-    note: "Platzhalter: Die Datenschutzerklärung ist gesetzlich vorgeschrieben und muss vor dem Livegang ergänzt und rechtlich geprüft werden (Hosting-Anbieter, Server-Logs, Kontaktaufnahme, ggf. Analyse-Tool).",
+    controller: "Verantwortlicher",
+    updated: "Stand: November 2026",
+    sections: [
+      { title: "Überblick", paragraphs: [
+        "Wir verarbeiten personenbezogene Daten nur, soweit dies für den Betrieb dieser Website und für die Kommunikation mit Ihnen erforderlich ist. Grundlage ist die Datenschutz-Grundverordnung (DSGVO) sowie das Bundesdatenschutzgesetz (BDSG).",
+        "Diese Website verwendet keine Analyse- oder Tracking-Werkzeuge, keine Werbe-Cookies, keine Social-Media-Plugins und keine eingebetteten Inhalte Dritter (etwa Videos oder Karten).",
+      ] },
+      { title: "Hosting und Server-Logfiles", paragraphs: [
+        "Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Aufruf der Website verarbeitet Vercel automatisch technische Daten, die Ihr Browser übermittelt: IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Adresse, Referrer-URL, Browser und Betriebssystem sowie den Statuscode der Antwort.",
+        "Diese Daten werden benötigt, um die Website auszuliefern, ihre Sicherheit zu gewährleisten und Fehler zu analysieren. Rechtsgrundlage ist unser berechtigtes Interesse an einem sicheren und stabilen Betrieb (Art. 6 Abs. 1 lit. f DSGVO). Die Logdaten werden nach kurzer Zeit automatisch gelöscht.",
+        "Mit Vercel besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). Vercel ist nach dem EU-US Data Privacy Framework zertifiziert; damit besteht für die Übermittlung in die USA ein Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Ergänzend gelten die EU-Standardvertragsklauseln.",
+      ] },
+      { title: "Inhalte, Datenbank und Bilder", paragraphs: [
+        "Die Inhalte dieser Website (Texte, Projektbeschreibungen, Bilder) werden in einer Datenbank und einem Dateispeicher unserer Dienstleister Neon, Inc. und Vercel Inc. abgelegt. Dabei werden keine personenbezogenen Daten von Besucherinnen und Besuchern gespeichert. Bilder werden über unseren eigenen Server ausgeliefert, Ihr Browser baut dafür keine Verbindung zu Dritten auf.",
+      ] },
+      { title: "Cookies und Schriftarten", paragraphs: [
+        "Für Besucherinnen und Besucher setzt diese Website keine Cookies. Lediglich der passwortgeschützte Verwaltungsbereich verwendet ein technisch notwendiges Anmelde-Cookie (§ 25 Abs. 2 TDDDG); dieser Bereich ist nur unserem Team zugänglich.",
+        "Alle Schriftarten sind lokal auf unserem Server eingebunden. Beim Besuch der Website wird keine Verbindung zu Google oder anderen Schriftanbietern hergestellt.",
+      ] },
+      { title: "SSL-/TLS-Verschlüsselung", paragraphs: [
+        "Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://“ in der Adresszeile Ihres Browsers.",
+      ] },
+      { title: "Kontakt per E-Mail oder Telefon", paragraphs: [
+        "Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, E-Mail-Adresse, Telefonnummer und Inhalt Ihrer Anfrage), um Ihr Anliegen zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit einem Vertrag oder vorvertraglichen Maßnahmen zusammenhängt, ansonsten unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
+        "Unser E-Mail-Postfach wird von der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, betrieben. Wir löschen Ihre Daten, sobald sie für die Bearbeitung nicht mehr erforderlich sind; gesetzliche Aufbewahrungspflichten (insbesondere handels- und steuerrechtliche) bleiben unberührt.",
+      ] },
+      { title: "Links zu anderen Websites", paragraphs: [
+        "Diese Website enthält Links zu Websites unserer Projekte und Kunden. Erst wenn Sie einen solchen Link anklicken, wird eine Verbindung zur jeweiligen Website aufgebaut. Für deren Inhalte und Datenverarbeitung ist der jeweilige Betreiber verantwortlich.",
+      ] },
+      { title: "Ihre Rechte", paragraphs: [
+        "Sie haben das Recht auf Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO), auf Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20). Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO).",
+        "Widerspruchsrecht: Soweit wir Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeiten, können Sie aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit Widerspruch einlegen (Art. 21 DSGVO).",
+        "Für alle Anliegen zum Datenschutz genügt eine formlose Nachricht an die oben genannten Kontaktdaten.",
+      ] },
+      { title: "Beschwerderecht", paragraphs: [
+        "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Für uns zuständig ist: Der Hessische Beauftragte für Datenschutz und Informationsfreiheit, Gustav-Stresemann-Ring 1, 65189 Wiesbaden.",
+      ] },
+      { title: "Keine automatisierte Entscheidung", paragraphs: [
+        "Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.",
+      ] },
+    ],
   },
   notFound: { title: "Seite nicht gefunden", text: "Diese Seite gibt es nicht (mehr).", cta: "Zur Startseite" },
 };

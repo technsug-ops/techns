@@ -281,6 +281,7 @@ footer{background:var(--gray);padding:64px 0 28px;font-size:15px}
 .legal-page h1{font-size:clamp(36px,5vw,52px);margin-bottom:32px}
 .legal-page h2{font-size:22px;margin:32px 0 8px}
 .legal-page p{margin:0 0 12px;color:var(--ink-2);max-width:70ch}
+.legal-page .updated{margin-top:40px;font-size:14px;color:var(--muted)}
 .legal-page .note{padding:16px 20px;border-radius:var(--r-md);background:#FDEBCF;color:var(--ink)}
 .back{display:inline-flex;margin-bottom:24px;font-weight:600;color:var(--teal-ink)}
 
