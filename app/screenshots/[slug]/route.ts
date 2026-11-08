@@ -31,6 +31,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
   api.searchParams.set("viewport.height", "900");
   api.searchParams.set("waitUntil", "networkidle0");
   api.searchParams.set("waitForTimeout", "3000");
+  api.searchParams.set("force", "true"); // immer frisch aufnehmen (wir speichern ohnehin selbst)
 
   try {
     const res = await fetch(api, { cache: "no-store" });
