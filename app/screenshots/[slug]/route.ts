@@ -43,7 +43,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
     return new Response(await img.arrayBuffer(), {
       headers: {
         "Content-Type": img.headers.get("content-type") ?? "image/png",
-        "Cache-Control": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000",
+        "Cache-Control": "public, max-age=604800, s-maxage=604800, stale-while-revalidate=2592000",
       },
     });
   } catch (err) {
