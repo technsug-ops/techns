@@ -7,6 +7,7 @@ import * as migration_20261107_161734_neuordnung from './20261107_161734_neuordn
 import * as migration_20261108_092118_apps_bereich from './20261108_092118_apps_bereich';
 import * as migration_20261108_092200_apps_inhalte from './20261108_092200_apps_inhalte';
 import * as migration_20261108_100000_fallstudien from './20261108_100000_fallstudien';
+import * as migration_20261108_101500_bezirga_info from './20261108_101500_bezirga_info';
 
 export const migrations = [
   {
@@ -53,5 +54,10 @@ export const migrations = [
     up: migration_20261108_100000_fallstudien.up,
     down: migration_20261108_100000_fallstudien.down,
     name: '20261108_100000_fallstudien',
+  },
+  {
+    up: migration_20261108_101500_bezirga_info.up,
+    down: migration_20261108_101500_bezirga_info.down,
+    name: '20261108_101500_bezirga_info',
   },
 ];
