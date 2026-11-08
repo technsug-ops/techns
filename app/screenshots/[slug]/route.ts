@@ -45,7 +45,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
 
     // Leere Aufnahme (Seite blockiert Bots oder lädt nicht): kein Bild speichern, Karte zeigt den Projektnamen.
     const { channels } = await sharp(raw).stats();
-    if (Math.max(...channels.map((c) => c.stdev)) < 4) {
+    if (Math.max(...channels.map((c) => c.stdev)) < 1) {
       if (process.env.BLOB_READ_WRITE_TOKEN) {
         const { blobs } = await list({ prefix: `screenshots/${slug}.` });
         if (blobs.length) await del(blobs.map((b) => b.url));
