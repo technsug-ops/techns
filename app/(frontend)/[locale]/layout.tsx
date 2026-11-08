@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t.meta.ogTitle,
       description: t.claim,
     },
+    twitter: { card: "summary_large_image", title: t.meta.ogTitle, description: t.claim },
     robots: { index: true, follow: true },
   };
 }
@@ -46,6 +47,10 @@ export default async function LocaleLayout({ children, params }: Props & { child
     "@context": "https://schema.org",
     "@type": "Organization",
     name: company.legalName,
+    alternateName: ["TechNS", company.meaning],
+    slogan: t.claim,
+    description: t.meta.description,
+    knowsAbout: ["Artificial intelligence", "AI agents", "Process automation", "ERP systems", "Web development", "Mobile apps", "Marketplace integration"],
     url: company.siteUrl,
     telephone: company.phone.display,
     email: company.email,

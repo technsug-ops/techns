@@ -15,7 +15,7 @@ export type NavItem = { key: NavKey; href: `#${string}` | `/${string}` };
 
 export type ProjectKind = "Eigenes Produkt" | "Kundenprojekt" | "Kundenprojekt · laufend" | "In Entwicklung";
 export type ProjectGroupId = "erp" | "websites" | "apps";
-export type ServiceId = "prozesse" | "software" | "integration" | "daten";
+export type ServiceId = "ki" | "prozesse" | "software" | "integration" | "daten";
 
 export type CaseBlock =
   | { type: "text"; title: string; body: string }
@@ -58,6 +58,7 @@ export const company = {
   email: "info@techns.de",
   bookingUrl: "#kontakt",
   siteUrl: "https://techns.de",
+  meaning: "Technology Next Station",
 } as const;
 
 export const nav: NavItem[] = [
@@ -77,7 +78,8 @@ export const statValues = ["24.000+", "5", "3", "18"] as const;
 
 export const principleIcons: IconName[] = ["measure", "api", "lock", "globe", "rocket"];
 
-export const services: { id: ServiceId; icon: IconName; tone: "mint" | "lavender" | "peach" | "gray"; proof: { label: string; href: `#${string}` } }[] = [
+export const services: { id: ServiceId; icon: IconName; tone: "mint" | "lavender" | "peach" | "gray"; wide?: boolean; proof: { label: string; href: `#${string}` } }[] = [
+  { id: "ki", icon: "ai", tone: "lavender", wide: true, proof: { label: "", href: "#ueber" } },
   { id: "prozesse", icon: "flow", tone: "mint", proof: { label: "Produktions-ERP", href: "#projekt-produktions-erp" } },
   { id: "software", icon: "code", tone: "lavender", proof: { label: "MentörDE, Kompass", href: "#projekt-mentorde" } },
   { id: "integration", icon: "sync", tone: "peach", proof: { label: "Bezirga", href: "#projekt-bezirga" } },

@@ -41,7 +41,7 @@ export interface Dictionary {
     lede: string;
     provenBy: string;
     allTech: string;
-    items: Record<ServiceId, { title: string; text: string; points: string[] }>;
+    items: Record<ServiceId, { title: string; text: string; points: string[]; proof?: string }>;
   };
   groups: Record<ProjectGroupId, { eyebrow: string; heading: AccentHeading; lede: string; deliverables: string[] }>;
   groupsCommon: { deliverablesLabel: string; empty: string };

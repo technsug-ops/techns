@@ -9,7 +9,8 @@ export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
   const seg = pathname.split("/")[1];
 
-  if (seg === defaultLocale) {
+  // Vorschaubilder (opengraph-image) liegen technisch unter /de/… – nicht umleiten.
+  if (seg === defaultLocale && !pathname.startsWith(`/${defaultLocale}/opengraph-image`)) {
     const rest = pathname.slice(defaultLocale.length + 1) || "/";
     return NextResponse.redirect(new URL(rest + search, request.url), 308);
   }

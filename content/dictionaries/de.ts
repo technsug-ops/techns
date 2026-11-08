@@ -2,11 +2,11 @@ import type { Dictionary } from "../dictionary";
 
 export const de: Dictionary = {
   meta: {
-    title: "TechNS – Prozesse, Software und Daten für den Mittelstand",
-    description: "TechNS UG aus Oberursel bei Frankfurt: Prozessanalyse, Digitalisierung, ERP-Systeme, Websites sowie Marktplatz- und ERP-Integration.",
-    ogTitle: "TechNS – Systeme, mit denen Unternehmen wachsen",
+    title: "TechNS – KI-gestützte Software und Prozesse für den Mittelstand",
+    description: "TechNS – Technology Next Station aus Oberursel bei Frankfurt: Prozessanalyse, KI-Agenten und Automatisierung, ERP-Systeme, Websites und Apps für den Mittelstand.",
+    ogTitle: "TechNS – Technology Next Station",
   },
-  claim: "Prozesse verstehen. Systeme bauen. Wachstum messen.",
+  claim: "Prozesse verstehen. Systeme bauen. Mit KI wachsen.",
   nav: {
     leistungen: "Leistungen",
     erp: "ERP-Systeme",
@@ -34,9 +34,9 @@ export const de: Dictionary = {
     start: "Start",
   },
   hero: {
-    kicker: "TechNS UG · Oberursel bei Frankfurt",
-    headline: { before: "Systeme, mit denen Unternehmen", accent: "wachsen", after: "." },
-    sub: "Wir digitalisieren die Abläufe von Unternehmen und bauen die Software, die sie trägt – von der Prozessanalyse über Marktplatz- und ERP-Integration bis zur eigenen Datenplattform. Jedes Vorhaben beginnt bei uns mit einer Messung, nicht mit einer Annahme.",
+    kicker: "TechNS · Technology Next Station",
+    headline: { before: "Ihre nächste Station:", accent: "KI-gestützte", after: "Systeme." },
+    sub: "TechNS steht für Technology Next Station. Wir analysieren Ihre Abläufe, bauen die Software, die sie trägt, und setzen künstliche Intelligenz dort ein, wo sie messbar Arbeit abnimmt – von der Prozessanalyse über ERP- und Marktplatz-Integration bis zu KI-Agenten. Jedes Vorhaben beginnt mit einer Messung, nicht mit einer Annahme.",
     ctaPrimary: "Erstgespräch vereinbaren",
     ctaSecondary: "Projekte ansehen",
     panelTitle: "Abläufe · vorher → nachher",
@@ -52,27 +52,33 @@ export const de: Dictionary = {
   ],
   statsLabel: "Kennzahlen",
   principles: [
+    ["KI-gestützt", "entwickelt"],
     ["Erst messen,", "dann bauen"],
     ["Integration statt", "Insellösungen"],
     ["Datenschutz", "ab Entwurf"],
-    ["Mehrsprachige", "Plattformen"],
     ["Eigene Produkte", "im Live-Betrieb"],
   ],
   now: { label: "Aktuell in Entwicklung" },
   about: {
     eyebrow: "Über uns",
     heading: { before: "Software, die aus dem", accent: "echten Ablauf", after: "entsteht." },
-    lede: "TechNS ist ein Softwareunternehmen aus Oberursel bei Frankfurt. Wir verbinden Prozessverständnis mit Entwicklung: Bevor wir eine Zeile Code schreiben, verstehen wir, wie Ihr Unternehmen tatsächlich arbeitet.",
-    body: "Wir bauen nicht nur für Kunden, sondern betreiben eigene Produkte – eine Hochschul-Datenplattform, ein ERP für Marktplatzhändler und eine Familien-App. Dadurch wissen wir, was ein System im Alltag aushalten muss.",
+    lede: "TechNS steht für Technology Next Station – ein Softwareunternehmen aus Oberursel bei Frankfurt. Wir verbinden Prozessverständnis, Entwicklung und künstliche Intelligenz: Bevor wir eine Zeile Code schreiben, verstehen wir, wie Ihr Unternehmen tatsächlich arbeitet.",
+    body: "KI ist bei uns kein Zusatz, sondern Arbeitsweise: Wir entwickeln jeden Tag mit KI-Werkzeugen und liefern dadurch deutlich schneller. Zugleich betreiben wir eigene Produkte – eine Hochschul-Datenplattform, ein ERP für Marktplatzhändler und eine Familien-App. Dadurch wissen wir, was ein System im Alltag aushalten muss.",
     cta: "Wer dahintersteht",
   },
   services: {
     eyebrow: "Leistungen",
     heading: { before: "Was wir für", accent: "Sie", after: "tun" },
-    lede: "Vier Leistungsfelder – jedes belegt durch Systeme, die wir selbst gebaut haben und betreiben.",
+    lede: "Fünf Leistungsfelder – jedes belegt durch Systeme, die wir selbst gebaut haben und betreiben.",
     provenBy: "Belegt durch",
     allTech: "Alle Technologien ansehen →",
     items: {
+      ki: {
+        title: "KI-Agenten & Automatisierung",
+        text: "Wir setzen KI dort ein, wo sie messbar Arbeit abnimmt – mit Agenten, die Anfragen beantworten, Daten auswerten und Routinen erledigen.",
+        points: ["KI-Agenten für Vertrieb und Kundenservice", "Automatische Auswertungen und Berichte", "Dokumente und E-Mails per KI verarbeiten", "DSGVO-konform, der Mensch entscheidet"],
+        proof: "unsere eigene Arbeitsweise",
+      },
       prozesse: {
         title: "Prozessanalyse & Digitalisierung",
         text: "Wir erfassen, wie Ihr Unternehmen tatsächlich arbeitet – als Grundlage für Automatisierung.",
@@ -198,6 +204,8 @@ export const de: Dictionary = {
     heading: { before: "Gut zu wissen,", accent: "bevor", after: "wir sprechen." },
     lede: "Ihre Frage ist nicht dabei? Schreiben Sie uns – wir antworten persönlich.",
     items: [
+      { q: "Wofür steht TechNS?", a: "Für Technology Next Station: die nächste Station auf dem Weg Ihres Unternehmens zu digitalen, KI-gestützten Abläufen – und für unseren Anspruch, selbst immer mit der nächsten Technologie zu arbeiten." },
+      { q: "Wie setzen Sie künstliche Intelligenz ein?", a: "Auf zwei Ebenen: Wir entwickeln selbst KI-gestützt und liefern dadurch schneller. Und wir bauen KI in Ihre Abläufe ein – etwa Agenten für Anfragen im Vertrieb und Kundenservice oder automatische Auswertungen. Die Entscheidung bleibt beim Menschen, Ihre Daten werden DSGVO-konform verarbeitet." },
       { q: "Wie läuft ein Erstgespräch ab?", a: "In rund 30 Minuten klären wir, wo es in Ihren Abläufen hakt und wie groß die Lücke ist. Danach wissen Sie, ob und wie wir helfen können – unverbindlich." },
       { q: "Arbeiten Sie auch mit unseren bestehenden Systemen?", a: "Ja. Wir binden vorhandene Systeme über ihre Schnittstellen an, statt sie zu ersetzen – etwa Shopsysteme, Marktplätze oder Ihr ERP." },
       { q: "Müssen wir mit einem großen Projekt starten?", a: "Nein. Wir beginnen mit einer Messung und setzen dann in Etappen um. Jede Etappe liefert für sich einen messbaren Nutzen." },

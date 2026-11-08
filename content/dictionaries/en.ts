@@ -2,11 +2,11 @@ import type { Dictionary } from "../dictionary";
 
 export const en: Dictionary = {
   meta: {
-    title: "TechNS – Processes, software and data for growing businesses",
-    description: "TechNS UG from Oberursel near Frankfurt: process analysis, digitalisation, ERP systems, websites and marketplace and ERP integration.",
-    ogTitle: "TechNS – Systems that help businesses grow",
+    title: "TechNS – AI-powered software and processes for SMEs",
+    description: "TechNS – Technology Next Station from Oberursel near Frankfurt: process analysis, AI agents and automation, ERP systems, websites and apps for growing businesses.",
+    ogTitle: "TechNS – Technology Next Station",
   },
-  claim: "Understand processes. Build systems. Measure growth.",
+  claim: "Understand processes. Build systems. Grow with AI.",
   nav: {
     leistungen: "Services",
     erp: "ERP systems",
@@ -34,9 +34,9 @@ export const en: Dictionary = {
     start: "Home",
   },
   hero: {
-    kicker: "TechNS UG · Oberursel near Frankfurt",
-    headline: { before: "Systems that help businesses", accent: "grow", after: "." },
-    sub: "We digitalise how companies work and build the software that runs it – from process analysis and marketplace and ERP integration to fully fledged data platforms. Every project starts with a measurement, not an assumption.",
+    kicker: "TechNS · Technology Next Station",
+    headline: { before: "Your next station:", accent: "AI-powered", after: "systems." },
+    sub: "TechNS stands for Technology Next Station. We analyse how you work, build the software that runs it and use artificial intelligence wherever it measurably takes work off your hands – from process analysis and ERP and marketplace integration to AI agents. Every project starts with a measurement, not an assumption.",
     ctaPrimary: "Book an intro call",
     ctaSecondary: "See projects",
     panelTitle: "Workflows · before → after",
@@ -52,27 +52,33 @@ export const en: Dictionary = {
   ],
   statsLabel: "Key figures",
   principles: [
+    ["Built with", "AI"],
     ["Measure first,", "then build"],
     ["Integration instead", "of silos"],
     ["Privacy", "by design"],
-    ["Multilingual", "platforms"],
     ["Our own products", "in production"],
   ],
   now: { label: "Currently in development" },
   about: {
     eyebrow: "About us",
     heading: { before: "Software built from", accent: "how you really work", after: "." },
-    lede: "TechNS is a software company from Oberursel near Frankfurt. We combine process expertise with development: before we write a single line of code, we understand how your business actually works.",
-    body: "We don't only build for clients – we run our own products: a university data platform, an ERP for marketplace sellers and a family app. That's how we know what a system has to withstand day to day.",
+    lede: "TechNS stands for Technology Next Station – a software company from Oberursel near Frankfurt. We combine process expertise, development and artificial intelligence: before we write a single line of code, we understand how your business actually works.",
+    body: "AI is not an add-on for us, it is how we work: we develop with AI tools every day and deliver much faster as a result. We also run our own products – a university data platform, an ERP for marketplace sellers and a family app. That's how we know what a system has to withstand day to day.",
     cta: "Who's behind it",
   },
   services: {
     eyebrow: "Services",
     heading: { before: "What we do for", accent: "you" },
-    lede: "Four service areas – each backed by systems we have built and run ourselves.",
+    lede: "Five service areas – each backed by systems we have built and run ourselves.",
     provenBy: "Proven by",
     allTech: "See all technologies →",
     items: {
+      ki: {
+        title: "AI agents & automation",
+        text: "We use AI wherever it measurably takes work off your hands – with agents that answer enquiries, analyse data and handle routine tasks.",
+        points: ["AI agents for sales and customer service", "Automated analyses and reports", "Processing documents and emails with AI", "GDPR-compliant, humans stay in charge"],
+        proof: "the way we work",
+      },
       prozesse: {
         title: "Process analysis & digitalisation",
         text: "We capture how your company really works – as the foundation for automation.",
@@ -198,7 +204,9 @@ export const en: Dictionary = {
     heading: { before: "Good to know", accent: "before", after: "we talk." },
     lede: "Your question isn't here? Write to us – we'll answer personally.",
     items: [
-      { q: "What happens in an intro call?", a: "In about 30 minutes we find out where your workflows get stuck and how big the gap is. Afterwards you know whether and how we can help – no strings attached." },
+      { q: "What does TechNS stand for?", a: "Technology Next Station: the next stop on your company's way to digital, AI-powered workflows – and our commitment to always work with the next technology ourselves." },
+      { q: "How do you use artificial intelligence?", a: "On two levels: we develop with AI ourselves and deliver faster as a result. And we build AI into your workflows – for example agents that handle sales and customer-service enquiries, or automated analyses. Humans keep the final say, and your data is processed in line with the GDPR." },
+      { q: "How does an intro call work?", a: "In about 30 minutes we find out where your workflows get stuck and how big the gap is. Afterwards you know whether and how we can help – no strings attached." },
       { q: "Do you work with our existing systems?", a: "Yes. We connect existing systems through their interfaces instead of replacing them – shop systems, marketplaces or your ERP." },
       { q: "Do we have to start with a big project?", a: "No. We begin with a measurement and then deliver in stages. Each stage brings measurable value on its own." },
       { q: "How do you handle our data?", a: "We plan for privacy from the start – in line with the GDPR and with hosting in Germany wherever possible." },

@@ -10,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...projects.map((p) => ({ path: `/projekte/${p.slug}`, priority: 0.7, changeFrequency: "monthly" as const })),
     { path: "/team", priority: 0.6, changeFrequency: "monthly" },
     { path: "/impressum", priority: 0.2, changeFrequency: "yearly" },
+    { path: "/datenschutz", priority: 0.2, changeFrequency: "yearly" },
   ];
   const abs = (p: string) => `${company.siteUrl}${p === "/" ? "" : p}` || company.siteUrl;
   return paths.flatMap(({ path, priority, changeFrequency }) =>

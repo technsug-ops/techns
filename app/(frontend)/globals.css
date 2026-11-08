@@ -133,7 +133,9 @@ a:hover .arrow{transform:rotate(-12deg) scale(1.05)}
 .about-art svg{position:absolute;inset:0;width:100%;height:100%}
 .about p{color:var(--ink-2);margin:0 0 16px}
 
-.services{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.services{margin-top:48px;display:grid;grid-template-columns:1fr;gap:20px}
+@media (min-width:700px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1500px){.services{grid-template-columns:repeat(4,1fr)}}
 .svc{display:flex;flex-direction:column;gap:12px;padding:32px 28px 28px;border-radius:var(--r-lg);background:var(--mint);text-decoration:none;transition:transform .25s,box-shadow .25s}
 .svc.tone-mint{background:var(--mint)}.svc.tone-lavender{background:#E5E4F2}.svc.tone-peach{background:#FDEBCF}.svc.tone-gray{background:var(--gray)}
 .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
@@ -147,6 +149,8 @@ a:hover .arrow{transform:rotate(-12deg) scale(1.05)}
 .svc .foot{margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
 .svc .foot b{color:var(--ink);font-weight:600}
 .svc .arrow{width:44px;height:44px}
+.svc.svc-wide{grid-column:1/-1}
+@media (min-width:900px){.svc.svc-wide ul{columns:2;column-gap:32px}.svc.svc-wide ul li{break-inside:avoid;margin:0 0 10px}}
 .tech{margin:32px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;list-style:none;padding:0}
 .tech li{padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #DCDCDC;font-size:14px;font-weight:500;color:var(--ink-2)}
 

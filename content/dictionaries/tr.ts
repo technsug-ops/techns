@@ -2,11 +2,11 @@ import type { Dictionary } from "../dictionary";
 
 export const tr: Dictionary = {
   meta: {
-    title: "TechNS – İşletmeler için süreç, yazılım ve veri",
-    description: "Frankfurt yakınlarında, Oberursel'de bulunan TechNS UG: süreç analizi, dijitalleştirme, ERP sistemleri, web siteleri ile pazaryeri ve ERP entegrasyonu.",
-    ogTitle: "TechNS – İşletmelerin büyümesini sağlayan sistemler",
+    title: "TechNS – İşletmeler için yapay zekâ destekli yazılım",
+    description: "TechNS – Technology Next Station, Frankfurt yakınlarında Oberursel'de: süreç analizi, yapay zekâ ajanları ve otomasyon, ERP sistemleri, web siteleri ve uygulamalar.",
+    ogTitle: "TechNS – Technology Next Station",
   },
-  claim: "Süreçleri anla. Sistemleri kur. Büyümeyi ölç.",
+  claim: "Süreçleri anla. Sistemleri kur. Yapay zekâ ile büyü.",
   nav: {
     leistungen: "Hizmetler",
     erp: "ERP sistemleri",
@@ -34,9 +34,9 @@ export const tr: Dictionary = {
     start: "Ana sayfa",
   },
   hero: {
-    kicker: "TechNS UG · Oberursel, Frankfurt yakını",
-    headline: { before: "İşletmelerin", accent: "büyümesini", after: "sağlayan sistemler." },
-    sub: "Şirketlerin iş süreçlerini dijitalleştiriyor ve bu süreçleri taşıyan yazılımları geliştiriyoruz – süreç analizinden pazaryeri ve ERP entegrasyonuna, kendi veri platformlarına kadar. Her proje bir varsayımla değil, bir ölçümle başlar.",
+    kicker: "TechNS · Technology Next Station",
+    headline: { before: "İşletmenizin bir sonraki durağı:", accent: "yapay zekâ destekli", after: "sistemler." },
+    sub: "TechNS, Technology Next Station'ın kısaltmasıdır. İş süreçlerinizi analiz ediyor, onları taşıyan yazılımı geliştiriyor ve yapay zekâyı ölçülebilir şekilde iş yükü azalttığı her yerde kullanıyoruz – süreç analizinden ERP ve pazaryeri entegrasyonuna, yapay zekâ ajanlarına kadar. Her proje bir varsayımla değil, bir ölçümle başlar.",
     ctaPrimary: "Tanışma görüşmesi planla",
     ctaSecondary: "Projeleri incele",
     panelTitle: "Süreçler · önce → sonra",
@@ -52,27 +52,33 @@ export const tr: Dictionary = {
   ],
   statsLabel: "Rakamlar",
   principles: [
+    ["Yapay zekâ ile", "geliştirildi"],
     ["Önce ölç,", "sonra inşa et"],
     ["Ada çözümler yerine", "entegrasyon"],
     ["Tasarımdan itibaren", "veri koruma"],
-    ["Çok dilli", "platformlar"],
     ["Canlıda çalışan", "kendi ürünlerimiz"],
   ],
   now: { label: "Şu an geliştiriliyor" },
   about: {
     eyebrow: "Hakkımızda",
     heading: { before: "Yazılımı,", accent: "gerçek iş akışından", after: "doğan sistemler." },
-    lede: "TechNS, Frankfurt yakınlarındaki Oberursel'de bir yazılım şirketidir. Süreç bilgisini yazılım geliştirmeyle birleştiriyoruz: tek satır kod yazmadan önce işletmenizin gerçekte nasıl çalıştığını anlıyoruz.",
-    body: "Yalnızca müşterilerimiz için değil, kendi ürünlerimizi de geliştirip işletiyoruz – bir üniversite veri platformu, pazaryeri satıcıları için bir ERP ve bir aile uygulaması. Bu sayede bir sistemin günlük kullanımda neye dayanması gerektiğini biliyoruz.",
+    lede: "TechNS, Technology Next Station'ın kısaltmasıdır – Frankfurt yakınlarındaki Oberursel'de bir yazılım şirketi. Süreç bilgisini, yazılım geliştirmeyi ve yapay zekâyı birleştiriyoruz: tek satır kod yazmadan önce işletmenizin gerçekte nasıl çalıştığını anlıyoruz.",
+    body: "Yapay zekâ bizim için bir eklenti değil, çalışma biçimimiz: Her gün yapay zekâ araçlarıyla geliştiriyor ve bu sayede çok daha hızlı teslim ediyoruz. Aynı zamanda kendi ürünlerimizi işletiyoruz – bir üniversite veri platformu, pazaryeri satıcıları için bir ERP ve bir aile uygulaması. Bu sayede bir sistemin günlük kullanımda neye dayanması gerektiğini biliyoruz.",
     cta: "Arkasındaki ekip",
   },
   services: {
     eyebrow: "Hizmetler",
     heading: { before: "Sizin için", accent: "neler", after: "yapıyoruz" },
-    lede: "Dört hizmet alanı – her biri bizzat geliştirip işlettiğimiz sistemlerle kanıtlanmış.",
+    lede: "Beş hizmet alanı – her biri bizzat geliştirip işlettiğimiz sistemlerle kanıtlanmış.",
     provenBy: "Kanıtı",
     allTech: "Tüm teknolojileri gör →",
     items: {
+      ki: {
+        title: "Yapay zekâ ajanları ve otomasyon",
+        text: "Yapay zekâyı ölçülebilir şekilde iş yükü azalttığı yerde kullanıyoruz – talepleri yanıtlayan, verileri değerlendiren ve rutin işleri üstlenen ajanlarla.",
+        points: ["Satış ve müşteri hizmetleri için yapay zekâ ajanları", "Otomatik analizler ve raporlar", "Belge ve e-postaların yapay zekâ ile işlenmesi", "GDPR'ye uygun, karar insanda"],
+        proof: "kendi çalışma biçimimiz",
+      },
       prozesse: {
         title: "Süreç analizi & dijitalleştirme",
         text: "Otomasyonun temeli olarak işletmenizin gerçekte nasıl çalıştığını kayıt altına alıyoruz.",
@@ -198,7 +204,9 @@ export const tr: Dictionary = {
     heading: { before: "Görüşmeden", accent: "önce", after: "bilmeniz gerekenler." },
     lede: "Sorunuz burada yok mu? Bize yazın – kişisel olarak yanıtlıyoruz.",
     items: [
-      { q: "Tanışma görüşmesi nasıl geçiyor?", a: "Yaklaşık 30 dakikada süreçlerinizin nerede tıkandığını ve açığın ne kadar büyük olduğunu netleştiriyoruz. Sonrasında size yardımcı olup olamayacağımızı ve nasıl olacağını bilirsiniz – bağlayıcı değil." },
+      { q: "TechNS ne anlama geliyor?", a: "Technology Next Station: işletmenizin dijital ve yapay zekâ destekli süreçlere giden yolundaki bir sonraki durak – ve her zaman bir sonraki teknolojiyle çalışma iddiamız." },
+      { q: "Yapay zekâyı nasıl kullanıyorsunuz?", a: "İki düzeyde: Kendimiz yapay zekâ destekli geliştiriyor ve böylece daha hızlı teslim ediyoruz. Ayrıca yapay zekâyı iş süreçlerinize entegre ediyoruz – örneğin satış ve müşteri hizmetleri taleplerini karşılayan ajanlar ya da otomatik analizler. Son karar insanda kalır, verileriniz GDPR'ye uygun işlenir." },
+      { q: "İlk görüşme nasıl ilerliyor?", a: "Yaklaşık 30 dakikada süreçlerinizin nerede tıkandığını ve açığın ne kadar büyük olduğunu netleştiriyoruz. Sonrasında size yardımcı olup olamayacağımızı ve nasıl olacağını bilirsiniz – bağlayıcı değil." },
       { q: "Mevcut sistemlerimizle de çalışıyor musunuz?", a: "Evet. Mevcut sistemleri değiştirmek yerine arayüzleri üzerinden bağlıyoruz – mağaza sistemleri, pazaryerleri ya da ERP'niz." },
       { q: "Büyük bir projeyle mi başlamamız gerekiyor?", a: "Hayır. Bir ölçümle başlıyor, ardından aşama aşama ilerliyoruz. Her aşama kendi başına ölçülebilir bir fayda sağlar." },
       { q: "Verilerimizi nasıl ele alıyorsunuz?", a: "Veri korumayı en baştan planlıyoruz – GDPR'ye uygun ve mümkün olan her yerde Almanya'da barındırma ile." },
