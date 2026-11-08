@@ -231,7 +231,13 @@ export const tr: Dictionary = {
     registerNumber: "Sicil numarası",
     vat: "KDV numarası",
     vatText: "§ 27a UStG uyarınca KDV kimlik numarası",
-    note: "Yayına almadan önce hukuki olarak kontrol ettirilmeli ve diğer zorunlu bilgilerle tamamlanmalıdır.",
+    responsible: "§ 18 Abs. 2 MStV uyarınca içerikten sorumlu kişi",
+    sections: [
+      { title: "Tüketici uyuşmazlıklarının çözümü", text: "Bir tüketici hakem kurulu önünde uyuşmazlık çözüm süreçlerine katılmaya hazır değiliz ve yükümlü de değiliz." },
+      { title: "İçerikten sorumluluk", text: "Hizmet sağlayıcı olarak bu sayfalardaki kendi içeriklerimizden genel yasalar çerçevesinde sorumluyuz. Ancak iletilen veya saklanan üçüncü taraf bilgilerini denetlemekle yükümlü değiliz. Bir hukuka aykırılıktan haberdar olduğumuzda ilgili içeriği derhal kaldırırız." },
+      { title: "Bağlantılardan sorumluluk", text: "Sitemiz, içerikleri üzerinde etkimiz olmayan üçüncü taraf web sitelerine bağlantılar içerir. Bu içeriklerden her zaman ilgili sağlayıcı veya işletmeci sorumludur. Bir hukuka aykırılıktan haberdar olduğumuzda bu tür bağlantıları derhal kaldırırız." },
+      { title: "Telif hakkı", text: "Bu sayfalardaki içerik ve eserler Alman telif hukukuna tabidir. Telif hukukunun sınırları dışında çoğaltılması, işlenmesi ve yayılması yazılı iznimize bağlıdır." },
+    ],
   },
   privacy: {
     title: "Gizlilik politikası",

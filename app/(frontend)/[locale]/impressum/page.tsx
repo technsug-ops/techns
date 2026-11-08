@@ -36,7 +36,14 @@ export default async function ImpressumPage({ params }: Props) {
           <p>{i.court}: {company.court}<br />{i.registerNumber}: {company.register}</p>
           <h2>{i.vat}</h2>
           <p>{i.vatText}: {company.vatId}</p>
-          <p className="note">{i.note}</p>
+          <h2>{i.responsible}</h2>
+          <p>{company.managingDirector}<br />{company.street}<br />{company.postalCode} {company.city}</p>
+          {i.sections.map((s) => (
+            <section key={s.title}>
+              <h2>{s.title}</h2>
+              <p>{s.text}</p>
+            </section>
+          ))}
         </div>
       </div>
     </Shell>

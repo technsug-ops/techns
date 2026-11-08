@@ -94,7 +94,9 @@ export interface Dictionary {
     registerNumber: string;
     vat: string;
     vatText: string;
-    note: string;
+    responsible: string;
+    /** Weitere Abschnitte (Streitbeilegung, Haftung). */
+    sections: { title: string; text: string }[];
   };
   privacy: { title: string; note: string };
   notFound: { title: string; text: string; cta: string };

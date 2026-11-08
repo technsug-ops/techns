@@ -231,7 +231,13 @@ export const de: Dictionary = {
     registerNumber: "Registernummer",
     vat: "Umsatzsteuer-ID",
     vatText: "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG",
-    note: "Vor dem Livegang rechtlich prüfen lassen und um die übrigen Pflichtangaben ergänzen.",
+    responsible: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+    sections: [
+      { title: "Verbraucherstreitbeilegung", text: "Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen." },
+      { title: "Haftung für Inhalte", text: "Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Bei Bekanntwerden von Rechtsverletzungen entfernen wir entsprechende Inhalte umgehend." },
+      { title: "Haftung für Links", text: "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese Inhalte ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entfernen wir derartige Links umgehend." },
+      { title: "Urheberrecht", text: "Die Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung und Verbreitung außerhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung." },
+    ],
   },
   privacy: {
     title: "Datenschutzerklärung",

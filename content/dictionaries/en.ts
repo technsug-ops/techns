@@ -231,7 +231,13 @@ export const en: Dictionary = {
     registerNumber: "Registration number",
     vat: "VAT ID",
     vatText: "VAT identification number pursuant to § 27a UStG",
-    note: "To be reviewed legally and completed with any remaining mandatory information before launch.",
+    responsible: "Responsible for content pursuant to § 18 (2) MStV",
+    sections: [
+      { title: "Consumer dispute resolution", text: "We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board." },
+      { title: "Liability for content", text: "As a service provider, we are responsible for our own content on these pages in accordance with general law. We are not obliged, however, to monitor third-party information that is transmitted or stored. As soon as we become aware of any legal violation, we will remove the content in question without delay." },
+      { title: "Liability for links", text: "Our website contains links to external third-party websites whose content we cannot influence. The respective provider or operator is always responsible for that content. As soon as we become aware of any legal violation, we will remove such links without delay." },
+      { title: "Copyright", text: "The content and works on these pages are subject to German copyright law. Reproduction, editing and distribution beyond the limits of copyright law require our written consent." },
+    ],
   },
   privacy: {
     title: "Privacy policy",
