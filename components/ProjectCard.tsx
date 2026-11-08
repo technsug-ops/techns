@@ -81,14 +81,14 @@ export function ProjectCard({ project, locale, t }: I18nProps & { project: Proje
         <StackTags stack={project.stack} label={t.project.technologies} />
       </div>
       <div className="card-actions">
-        {project.url ? (
-          <a href={project.url} target="_blank" rel="noopener">{domainOf(project)} ↗</a>
-        ) : (
-          <span className="no-url">{project.kind === "In Entwicklung" ? t.project.notPublic : ""}</span>
-        )}
         <Link className="details" href={localePath(locale, `/projekte/${project.slug}`)}>
           {t.project.details} <span className="arrow"><Icon name="next" /></span>
         </Link>
+        {project.url ? (
+          <a className="site" href={project.url} target="_blank" rel="noopener">{domainOf(project)} ↗</a>
+        ) : (
+          <span className="no-url">{project.kind === "In Entwicklung" ? t.project.notPublic : ""}</span>
+        )}
       </div>
     </article>
   );

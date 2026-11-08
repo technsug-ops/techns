@@ -311,7 +311,7 @@ footer{background:var(--gray);padding:64px 0 28px;font-size:15px}
 .stack{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
 .stack li{padding:4px 10px;border-radius:999px;border:1px solid #DCDCDC;font-size:12.5px;font-weight:600;color:var(--ink-2);background:#fff}
 .card-actions{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 24px 20px;border-top:1px solid var(--gray);font-size:15px;font-weight:600}
-.card-actions > a:first-child{text-decoration-color:var(--teal);text-underline-offset:4px;text-decoration-thickness:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-actions .site{text-decoration-color:var(--teal);text-underline-offset:4px;text-decoration-thickness:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card-actions .details{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--teal-deep);white-space:nowrap}
 .card-actions .details .arrow{width:38px;height:38px;background:var(--mint);box-shadow:none}
 .card-actions .details .arrow svg{width:18px;height:18px}
