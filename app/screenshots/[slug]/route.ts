@@ -30,7 +30,8 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
   api.searchParams.set("meta", "false");
   api.searchParams.set("viewport.width", "1440");
   api.searchParams.set("viewport.height", "900");
-  api.searchParams.set("waitForTimeout", "1500");
+  api.searchParams.set("waitUntil", "networkidle0");
+  api.searchParams.set("waitForTimeout", "3000");
 
   try {
     // Kein Data-Cache: ein Fehlschlag darf nicht 7 Tage hängen bleiben – gecacht wird die fertige Antwort im CDN.
