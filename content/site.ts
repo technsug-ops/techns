@@ -73,7 +73,7 @@ export const nav: NavItem[] = [
   { key: "faq", href: "#faq" },
 ];
 
-export const statValues = ["25.103", "5", "3", "18"] as const;
+export const statValues = ["24.000+", "5", "3", "18"] as const;
 
 export const principleIcons: IconName[] = ["measure", "api", "lock", "globe", "rocket"];
 

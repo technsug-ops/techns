@@ -24,6 +24,7 @@ export function Screenshot({ project, sizes, priority, t }: Pick<I18nProps, "t">
           fill
           sizes={sizes}
           priority={priority}
+          quality={85}
           style={{ objectFit: "cover", objectPosition: "top center" }}
         />
       ) : (

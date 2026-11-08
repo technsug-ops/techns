@@ -6,6 +6,7 @@ import * as migration_20261107_103100_uebersetzungen from './20261107_103100_ueb
 import * as migration_20261107_161734_neuordnung from './20261107_161734_neuordnung';
 import * as migration_20261108_092118_apps_bereich from './20261108_092118_apps_bereich';
 import * as migration_20261108_092200_apps_inhalte from './20261108_092200_apps_inhalte';
+import * as migration_20261108_100000_fallstudien from './20261108_100000_fallstudien';
 
 export const migrations = [
   {
@@ -47,5 +48,10 @@ export const migrations = [
     up: migration_20261108_092200_apps_inhalte.up,
     down: migration_20261108_092200_apps_inhalte.down,
     name: '20261108_092200_apps_inhalte',
+  },
+  {
+    up: migration_20261108_100000_fallstudien.up,
+    down: migration_20261108_100000_fallstudien.down,
+    name: '20261108_100000_fallstudien',
   },
 ];

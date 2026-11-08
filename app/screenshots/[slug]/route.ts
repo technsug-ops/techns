@@ -48,18 +48,24 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
     if (Math.max(...channels.map((c) => c.stdev)) < 1) {
       if (process.env.BLOB_READ_WRITE_TOKEN) {
         const { blobs } = await list({ prefix: `screenshots/${slug}.` });
-        if (blobs.length) await del(blobs.map((b) => b.url));
+        const { blobs: older } = await list({ prefix: `screenshots/${slug}--` });
+        const stale = [...blobs, ...older];
+        if (stale.length) await del(stale.map((b) => b.url));
         await put(`screenshots/${slug}.leer`, "leer", { access: "public", contentType: "text/plain", addRandomSuffix: false, allowOverwrite: true });
         revalidatePath("/", "layout");
       }
       throw new Error("leere Aufnahme");
     }
 
-    const webp = await sharp(raw).resize({ width: 1440 }).webp({ quality: 78 }).toBuffer();
+    // Volle Retina-Auflösung (Aufnahme kommt mit 2× Pixeldichte), damit die Detailseiten scharf bleiben.
+    const webp = await sharp(raw).resize({ width: 2560, withoutEnlargement: true }).webp({ quality: 85 }).toBuffer();
     if (process.env.BLOB_READ_WRITE_TOKEN) {
-      const { blobs } = await list({ prefix: `screenshots/${slug}.leer` });
-      if (blobs.length) await del(blobs.map((b) => b.url));
-      await put(`screenshots/${slug}.webp`, webp, { access: "public", contentType: "image/webp", addRandomSuffix: false, allowOverwrite: true });
+      // Neuer Dateiname bei jeder Aufnahme (Zeitstempel), damit kein CDN eine alte Version ausliefert; Altes wird gelöscht.
+      const { blobs } = await list({ prefix: `screenshots/${slug}.` });
+      const { blobs: older } = await list({ prefix: `screenshots/${slug}--` });
+      await put(`screenshots/${slug}--${Date.now()}.webp`, webp, { access: "public", contentType: "image/webp", addRandomSuffix: false });
+      const stale = [...blobs, ...older];
+      if (stale.length) await del(stale.map((b) => b.url));
       revalidatePath("/", "layout");
     }
     return new Response(new Uint8Array(webp), { headers: { "Content-Type": "image/webp", "Cache-Control": "public, max-age=3600, s-maxage=86400" } });

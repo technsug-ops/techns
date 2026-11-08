@@ -60,7 +60,7 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       <div className="wrap detail">
-        <div className="detail-shot"><Screenshot project={project} t={t} sizes="(max-width: 1200px) 100vw, 900px" priority /></div>
+        <div className="detail-shot"><Screenshot project={project} t={t} sizes="(max-width: 1200px) 100vw, 1100px" priority /></div>
 
         <div className="detail-grid">
           <article className="detail-body">

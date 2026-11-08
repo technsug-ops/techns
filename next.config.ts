@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [75, 85],
     minimumCacheTTL: 600, // Bildoptimierung folgt sonst dem Cache-Control der Quelle (Screenshots: 7 Tage, Platzhalter: 10 Min.)
     localPatterns: [{ pathname: "/api/media/file/**" }, { pathname: "/images/**" }, { pathname: "/screenshots/**" }],
     remotePatterns: [{ protocol: "https", hostname: "*.public.blob.vercel-storage.com" }],
