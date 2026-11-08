@@ -8,6 +8,9 @@ import { getPayload } from "payload";
  */
 export const revalidate = 604800;
 
+/** Kleine mintfarbene Fläche (16×10 PNG) als Platzhalter, falls die Aufnahme scheitert. */
+const PLACEHOLDER = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAKCAIAAAAy3EnLAAAAG0lEQVR4XmN88uk9AymAiRTFIDCqgRhA+1ACAFzWAtmqCFLkAAAAAElFTkSuQmCC";
+
 export async function GET(_req: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const payload = await getPayload({ config });
@@ -30,11 +33,12 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
   api.searchParams.set("waitForTimeout", "1500");
 
   try {
-    const res = await fetch(api, { next: { revalidate } });
-    const json = (await res.json()) as { status?: string; data?: { screenshot?: { url?: string } } };
+    // Kein Data-Cache: ein Fehlschlag darf nicht 7 Tage hängen bleiben – gecacht wird die fertige Antwort im CDN.
+    const res = await fetch(api, { cache: "no-store" });
+    const json = (await res.json()) as { status?: string; message?: string; data?: { screenshot?: { url?: string } } };
     const shotUrl = json.data?.screenshot?.url;
-    if (json.status !== "success" || !shotUrl) throw new Error(`microlink: ${json.status}`);
-    const img = await fetch(shotUrl, { next: { revalidate } });
+    if (json.status !== "success" || !shotUrl) throw new Error(`microlink: ${json.status} ${json.message ?? ""}`);
+    const img = await fetch(shotUrl, { cache: "no-store" });
     if (!img.ok) throw new Error(`image: ${img.status}`);
     return new Response(await img.arrayBuffer(), {
       headers: {
@@ -44,6 +48,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
     });
   } catch (err) {
     payload.logger.warn(`Screenshot für ${slug} fehlgeschlagen: ${String(err)}`);
-    return new Response("Screenshot unavailable", { status: 502, headers: { "Cache-Control": "no-store" } });
+    // Neutrale Fläche statt kaputtem Bild; nach einer Stunde wird es erneut versucht.
+    return new Response(Buffer.from(PLACEHOLDER, "base64"), { headers: { "Content-Type": "image/png", "Cache-Control": "public, max-age=600, s-maxage=3600" } });
   }
 }
