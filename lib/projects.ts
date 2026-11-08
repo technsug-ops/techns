@@ -5,6 +5,7 @@ import { cache } from "react";
 import type { Locale } from "@/content/i18n";
 import type { CaseBlock, Project, ProjectGroupId } from "@/content/site";
 import type { Media, Project as ProjectDoc } from "@/payload-types";
+import { getStoredScreenshots } from "./screenshots";
 
 function toScreenshot(m: ProjectDoc["screenshot"]): Project["screenshot"] {
   if (!m || typeof m === "number") return undefined;
@@ -44,6 +45,7 @@ export const getProjects = cache(async (locale: Locale = "de"): Promise<Project[
     fallbackLocale: "de",
     overrideAccess: false,
   });
+  const stored = await getStoredScreenshots();
   return docs
     .filter((d): d is ProjectDoc & { slug: string } => Boolean(d.slug))
     .map((d, i) => ({
@@ -57,8 +59,10 @@ export const getProjects = cache(async (locale: Locale = "de"): Promise<Project[
       metric: d.metric ?? undefined,
       url: d.url || undefined,
       displayDomain: d.displayDomain ?? undefined,
-      // Eigenes Bild aus dem CMS hat Vorrang, sonst automatischer Screenshot der Live-Seite.
-      screenshot: toScreenshot(d.screenshot) ?? (d.url ? { url: `/screenshots/${d.slug}`, alt: "", width: 1440, height: 900 } : undefined),
+      // Eigenes Bild aus dem CMS hat Vorrang, sonst gespeicherter Screenshot, sonst Aufnahme anstoßen.
+      screenshot:
+        toScreenshot(d.screenshot) ??
+        (d.url ? { url: stored[d.slug] ?? `/screenshots/${d.slug}`, alt: "", width: 1440, height: 900 } : undefined),
       stack: d.stack ?? [],
       caseStudy: toCaseStudy(d.caseStudy),
       featured: Boolean(d.featured),
