@@ -11,6 +11,7 @@ export const tr: Dictionary = {
     leistungen: "Hizmetler",
     erp: "ERP sistemleri",
     websites: "Web siteleri",
+    apps: "Uygulamalar",
     vorgehen: "Yaklaşım",
     analysen: "Analizler",
     gruender: "Hakkımızda",
@@ -95,6 +96,12 @@ export const tr: Dictionary = {
     },
   },
   groups: {
+    apps: {
+      eyebrow: "Mobil uygulamalar",
+      heading: { before: "Müşterilerinizin", accent: "sipariş", after: "verdiği uygulamalar." },
+      lede: "Toptancılar ve kurumsal müşterileri için yerel uygulamalar: ürün yelpazesi, bayi fiyatları ve sipariş doğrudan akıllı telefonda.",
+      deliverables: ["iOS & Android", "Mağaza entegrasyonu", "Girişten sonra bayi fiyatları", "Anlık bildirimler", "App Store yayını", "Bakım ve güncellemeler"],
+    },
     erp: {
       eyebrow: "ERP & iş yazılımları",
       heading: { before: "İşinizi", accent: "yöneten", after: "sistemler." },

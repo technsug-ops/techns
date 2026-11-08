@@ -21,6 +21,7 @@ const icons = {
   api: big(<><circle cx="24" cy="24" r="6" /><circle cx="8" cy="10" r="4" /><circle cx="40" cy="10" r="4" /><circle cx="8" cy="38" r="4" /><circle cx="40" cy="38" r="4" /><path d="m11 13 8 7M37 13l-8 7M11 35l8-7M37 35l-8-7" /></>),
   lock: big(<><rect x="9" y="21" width="30" height="22" rx="4" /><path d="M15 21v-6a9 9 0 0 1 18 0v6M24 30v5" /></>),
   globe: big(<><circle cx="24" cy="24" r="19" /><path d="M5 24h38M24 5c5 5 8 12 8 19s-3 14-8 19c-5-5-8-12-8-19s3-14 8-19Z" /></>),
+  mobile: big(<><rect x="13" y="4" width="22" height="40" rx="5" /><path d="M13 11h22M13 36h22M22 40h4" /><path d="m19 23 4 4 7-8" /></>),
   rocket: big(<><path d="M28 6c8 0 14 6 14 14L26 36l-14-14L28 6Z" /><circle cx="31" cy="17" r="4" /><path d="m12 22-7 2 6 6M26 36l-2 7-6-6M14 34l-6 6" /></>),
 } as const;
 

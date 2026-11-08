@@ -131,7 +131,7 @@ export interface Project {
   id: number;
   _order?: string | null;
   name: string;
-  group: 'erp' | 'websites';
+  group: 'erp' | 'websites' | 'apps';
   kind: 'Eigenes Produkt' | 'Kundenprojekt' | 'Kundenprojekt · laufend' | 'In Entwicklung';
   meta: string;
   description: string;

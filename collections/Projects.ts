@@ -68,6 +68,7 @@ export const Projects: CollectionConfig = {
           options: [
             { label: "ERP & Business-Software", value: "erp" },
             { label: "Websites & Web-Plattformen", value: "websites" },
+            { label: "Mobile Apps", value: "apps" },
           ],
           admin: { width: "40%" },
         },

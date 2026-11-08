@@ -11,6 +11,7 @@ export const de: Dictionary = {
     leistungen: "Leistungen",
     erp: "ERP-Systeme",
     websites: "Websites",
+    apps: "Apps",
     vorgehen: "Vorgehen",
     analysen: "Analysen",
     gruender: "Über uns",
@@ -95,6 +96,12 @@ export const de: Dictionary = {
     },
   },
   groups: {
+    apps: {
+      eyebrow: "Mobile Apps",
+      heading: { before: "Apps, mit denen Kunden", accent: "bestellen", after: "." },
+      lede: "Native Apps für Händler und ihre Geschäftskunden: Sortiment, Händlerpreise und Bestellung direkt auf dem Smartphone.",
+      deliverables: ["iOS & Android", "Shop-Anbindung", "Händlerpreise nach Login", "Push-Benachrichtigungen", "App-Store-Veröffentlichung", "Wartung & Updates"],
+    },
     erp: {
       eyebrow: "ERP & Business-Software",
       heading: { before: "Systeme, die Ihr", accent: "Geschäft", after: "steuern." },

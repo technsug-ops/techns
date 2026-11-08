@@ -9,12 +9,12 @@ import type { IconName } from "@/components/Icons";
 /** Überschrift mit kursiv gesetztem Akzentwort, z. B. „Was wir für *Sie* tun“. */
 export type AccentHeading = { before: string; accent: string; after?: string };
 
-export type NavKey = "leistungen" | "erp" | "websites" | "vorgehen" | "analysen" | "gruender" | "team" | "kenntnisse" | "faq";
+export type NavKey = "leistungen" | "erp" | "websites" | "apps" | "vorgehen" | "analysen" | "gruender" | "team" | "kenntnisse" | "faq";
 /** `#…` = Abschnitt der Startseite, `/…` = eigene Seite. */
 export type NavItem = { key: NavKey; href: `#${string}` | `/${string}` };
 
 export type ProjectKind = "Eigenes Produkt" | "Kundenprojekt" | "Kundenprojekt · laufend" | "In Entwicklung";
-export type ProjectGroupId = "erp" | "websites";
+export type ProjectGroupId = "erp" | "websites" | "apps";
 export type ServiceId = "prozesse" | "software" | "integration" | "daten";
 
 export type CaseBlock =
@@ -64,6 +64,7 @@ export const nav: NavItem[] = [
   { key: "leistungen", href: "#leistungen" },
   { key: "erp", href: "#erp" },
   { key: "websites", href: "#websites" },
+  { key: "apps", href: "#apps" },
   { key: "vorgehen", href: "#vorgehen" },
   { key: "analysen", href: "#analysen" },
   { key: "gruender", href: "#gruender" },
@@ -86,6 +87,7 @@ export const services: { id: ServiceId; icon: IconName; tone: "mint" | "lavender
 export const projectGroups: { id: ProjectGroupId; icon: IconName; tone: "mint" | "gray"; columns: 2 | 3 }[] = [
   { id: "erp", icon: "sync", tone: "mint", columns: 3 },
   { id: "websites", icon: "globe", tone: "gray", columns: 2 },
+  { id: "apps", icon: "mobile", tone: "mint", columns: 2 },
 ];
 
 export const processIcons: IconName[] = ["measure", "decide", "anchor"];

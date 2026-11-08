@@ -4,6 +4,8 @@ import * as migration_20261107_102200_inhalte from './20261107_102200_inhalte';
 import * as migration_20261107_102932_lokalisierung from './20261107_102932_lokalisierung';
 import * as migration_20261107_103100_uebersetzungen from './20261107_103100_uebersetzungen';
 import * as migration_20261107_161734_neuordnung from './20261107_161734_neuordnung';
+import * as migration_20261108_092118_apps_bereich from './20261108_092118_apps_bereich';
+import * as migration_20261108_092200_apps_inhalte from './20261108_092200_apps_inhalte';
 
 export const migrations = [
   {
@@ -34,6 +36,16 @@ export const migrations = [
   {
     up: migration_20261107_161734_neuordnung.up,
     down: migration_20261107_161734_neuordnung.down,
-    name: '20261107_161734_neuordnung'
+    name: '20261107_161734_neuordnung',
+  },
+  {
+    up: migration_20261108_092118_apps_bereich.up,
+    down: migration_20261108_092118_apps_bereich.down,
+    name: '20261108_092118_apps_bereich'
+  },
+  {
+    up: migration_20261108_092200_apps_inhalte.up,
+    down: migration_20261108_092200_apps_inhalte.down,
+    name: '20261108_092200_apps_inhalte',
   },
 ];
