@@ -55,7 +55,7 @@ export const company = {
   register: "HRB 16236",
   vatId: "DE312006599",
   phone: { display: "+49 6171 27786 92", href: "tel:+4961712778692" },
-  email: "[E-Mail-Adresse]",
+  email: "info@techns.de",
   bookingUrl: "#kontakt",
   siteUrl: "https://techns.de",
 } as const;

@@ -31,7 +31,7 @@ export default async function ImpressumPage({ params }: Props) {
           <h2>{i.representedBy}</h2>
           <p>{company.managingDirector}, {i.managingDirector}</p>
           <h2>{i.contact}</h2>
-          <p>{i.phone}: {company.phone.display}<br />{i.email}: {company.email}</p>
+          <p>{i.phone}: {company.phone.display}<br />{i.email}: <a href={`mailto:${company.email}`}>{company.email}</a></p>
           <h2>{i.register}</h2>
           <p>{i.court}: {company.court}<br />{i.registerNumber}: {company.register}</p>
           <h2>{i.vat}</h2>

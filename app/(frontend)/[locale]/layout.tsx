@@ -48,6 +48,7 @@ export default async function LocaleLayout({ children, params }: Props & { child
     name: company.legalName,
     url: company.siteUrl,
     telephone: company.phone.display,
+    email: company.email,
     address: { "@type": "PostalAddress", streetAddress: company.street, postalCode: company.postalCode, addressLocality: company.city, addressCountry: "DE" },
     founder: { "@type": "Person", name: company.managingDirector },
   };
