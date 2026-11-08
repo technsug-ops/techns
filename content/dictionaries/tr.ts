@@ -164,7 +164,7 @@ export const tr: Dictionary = {
     stations: [
       { period: "2024 – bugün", role: "Genel Müdür", org: "TechNS UG, Oberursel" },
       { period: "2025 – bugün", role: "Süreç Yöneticisi & Dijitalleşme", org: "HafenX, Renningen" },
-      { period: "2019 – 2025", role: "Kurucu", org: "euroTech Study – BT eğitimleri" },
+      { period: "2019 – 2025", role: "Kurucu ortak", org: "euroTech Study – BT eğitimleri" },
     ],
     languages: [
       { name: "Almanca", level: "B2" },
