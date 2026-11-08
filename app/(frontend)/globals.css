@@ -416,7 +416,9 @@ footer{background:var(--gray);padding:64px 0 28px;font-size:15px}
 .no-url{font-size:14px;font-weight:500;color:var(--muted)}
 
 /* ===== Sprachumschalter ===== */
-.side-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.side-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.side .lang a{min-width:30px;padding:0 6px}
+.side{overflow-x:hidden}
 .lang{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:var(--gray)}
 .lang a{min-width:34px;height:28px;padding:0 8px;display:inline-grid;place-items:center;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.02em;text-decoration:none;color:var(--muted);transition:background .2s,color .2s}
 .lang a:hover{color:var(--teal-deep)}
