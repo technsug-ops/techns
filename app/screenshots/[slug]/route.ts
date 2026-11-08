@@ -1,5 +1,5 @@
 import config from "@payload-config";
-import { put } from "@vercel/blob";
+import { del, list, put } from "@vercel/blob";
 import { revalidatePath } from "next/cache";
 import { getPayload } from "payload";
 import sharp from "sharp";
@@ -40,8 +40,24 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
     const img = await fetch(shotUrl, { cache: "no-store" });
     if (!img.ok) throw new Error(`image: ${img.status}`);
 
-    const webp = await sharp(Buffer.from(await img.arrayBuffer())).resize({ width: 1440 }).webp({ quality: 78 }).toBuffer();
+    const raw = Buffer.from(await img.arrayBuffer());
+
+    // Leere Aufnahme (Seite blockiert Bots oder lädt nicht): kein Bild speichern, Karte zeigt den Projektnamen.
+    const { channels } = await sharp(raw).stats();
+    if (Math.max(...channels.map((c) => c.stdev)) < 4) {
+      if (process.env.BLOB_READ_WRITE_TOKEN) {
+        const { blobs } = await list({ prefix: `screenshots/${slug}.` });
+        if (blobs.length) await del(blobs.map((b) => b.url));
+        await put(`screenshots/${slug}.leer`, "leer", { access: "public", contentType: "text/plain", addRandomSuffix: false, allowOverwrite: true });
+        revalidatePath("/", "layout");
+      }
+      throw new Error("leere Aufnahme");
+    }
+
+    const webp = await sharp(raw).resize({ width: 1440 }).webp({ quality: 78 }).toBuffer();
     if (process.env.BLOB_READ_WRITE_TOKEN) {
+      const { blobs } = await list({ prefix: `screenshots/${slug}.leer` });
+      if (blobs.length) await del(blobs.map((b) => b.url));
       await put(`screenshots/${slug}.webp`, webp, { access: "public", contentType: "image/webp", addRandomSuffix: false, allowOverwrite: true });
       revalidatePath("/", "layout");
     }

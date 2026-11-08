@@ -62,7 +62,9 @@ export const getProjects = cache(async (locale: Locale = "de"): Promise<Project[
       // Eigenes Bild aus dem CMS hat Vorrang, sonst gespeicherter Screenshot, sonst Aufnahme anstoßen.
       screenshot:
         toScreenshot(d.screenshot) ??
-        (d.url ? { url: stored[d.slug] ?? `/screenshots/${d.slug}`, alt: "", width: 1440, height: 900 } : undefined),
+        (d.url && stored[d.slug] !== null
+          ? { url: stored[d.slug] ?? `/screenshots/${d.slug}`, alt: "", width: 1440, height: 900 }
+          : undefined),
       stack: d.stack ?? [],
       caseStudy: toCaseStudy(d.caseStudy),
       featured: Boolean(d.featured),
