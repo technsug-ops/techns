@@ -13,7 +13,7 @@ export function Founder({ locale, t }: I18nProps) {
         <div className="founder">
           <div className={founderLinks.portrait ? "avatar avatar-photo" : "avatar"}>
             {founderLinks.portrait ? (
-              <Image src={founderLinks.portrait} alt={fmt(f.portraitAlt, { name })} fill sizes="240px" style={{ objectFit: "cover", objectPosition: "center top" }} />
+              <Image src={founderLinks.portrait} alt={fmt(f.portraitAlt, { name })} fill sizes="(min-width: 860px) 240px, 200px" quality={85} style={{ objectFit: "cover", objectPosition: "center" }} />
             ) : (
               <span>{f.portrait}<br />{name}</span>
             )}

@@ -46,7 +46,7 @@ export default async function TeamPage({ params }: Props) {
             <li key={m.id} className="member">
               <div className="member-photo">
                 {m.photo ? (
-                  <Image src={m.photo.url} alt={m.photo.alt || m.name} fill sizes="(max-width: 700px) 100vw, 360px" style={{ objectFit: "cover", objectPosition: "center top" }} />
+                  <Image src={m.photo.url} alt={m.photo.alt || m.name} fill sizes="(max-width: 700px) 100vw, 360px" quality={85} style={{ objectFit: "cover", objectPosition: "center" }} />
                 ) : (
                   <span className="ini" aria-hidden="true">{initials(m.name)}</span>
                 )}

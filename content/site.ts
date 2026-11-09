@@ -98,9 +98,9 @@ export const skillIcons: IconName[] = ["flow", "code", "sync", "measure"];
 
 export const founderLinks = {
   /** Porträt (public/images/team) – erscheint im Gründer-Abschnitt, in der Seitenleiste und als Ersatz auf der Team-Seite. */
-  portrait: "/images/team/halil-portrait.webp" as string | undefined,
+  portrait: "/images/team/halil-portrait-2026.webp" as string | undefined,
   /** Kleines rundes Bild für die Seitenleiste (Kopf mit Rand). */
-  avatar: "/images/team/halil-avatar.webp" as string | undefined,
+  avatar: "/images/team/halil-avatar-2026.webp" as string | undefined,
   /** Index der Station mit Link (euroTech Study). */
   stationLinks: { 2: "https://eurotechstudy.com" } as Record<number, string>,
 };
