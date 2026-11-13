@@ -74,14 +74,14 @@ export const nav: NavItem[] = [
   { key: "faq", href: "#faq" },
 ];
 
-export const statValues = ["24.000+", "5", "3", "18"] as const;
+export const statValues = ["24.000+", "5", "3", "10"] as const;
 
 export const principleIcons: IconName[] = ["measure", "api", "lock", "globe", "rocket"];
 
 export const services: { id: ServiceId; icon: IconName; tone: "mint" | "lavender" | "peach" | "gray"; wide?: boolean; proof: { label: string; href: `#${string}` } }[] = [
   { id: "ki", icon: "ai", tone: "lavender", wide: true, proof: { label: "", href: "#ueber" } },
   { id: "prozesse", icon: "flow", tone: "mint", proof: { label: "Produktions-ERP", href: "#projekt-produktions-erp" } },
-  { id: "software", icon: "code", tone: "lavender", proof: { label: "MentörDE, Kompass", href: "#projekt-mentorde" } },
+  { id: "software", icon: "code", tone: "lavender", proof: { label: "PrüfDesk, B2B-klar", href: "#projekt-pruefdesk" } },
   { id: "integration", icon: "sync", tone: "peach", proof: { label: "Bezirga", href: "#projekt-bezirga" } },
   { id: "daten", icon: "data", tone: "gray", proof: { label: "ApplyToGerman", href: "#projekt-applytogerman" } },
 ];

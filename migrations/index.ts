@@ -9,6 +9,7 @@ import * as migration_20261108_092200_apps_inhalte from './20261108_092200_apps_
 import * as migration_20261108_100000_fallstudien from './20261108_100000_fallstudien';
 import * as migration_20261108_101500_bezirga_info from './20261108_101500_bezirga_info';
 import * as migration_20261108_200000_profiq from './20261108_200000_profiq';
+import * as migration_20261113_180000_mentorde_kompass_ausblenden from './20261113_180000_mentorde_kompass_ausblenden';
 
 export const migrations = [
   {
@@ -65,5 +66,10 @@ export const migrations = [
     up: migration_20261108_200000_profiq.up,
     down: migration_20261108_200000_profiq.down,
     name: '20261108_200000_profiq',
+  },
+  {
+    up: migration_20261113_180000_mentorde_kompass_ausblenden.up,
+    down: migration_20261113_180000_mentorde_kompass_ausblenden.down,
+    name: '20261113_180000_mentorde_kompass_ausblenden',
   },
 ];

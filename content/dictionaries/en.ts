@@ -48,7 +48,7 @@ export const en: Dictionary = {
     "degree programmes on our ApplyToGerman data platform",
     "official data sources merged every day",
     "marketplaces connected to Bezirga via API",
-    "languages in Hausaufgaben-Kompass",
+    "projects in our portfolio – ERP, websites and apps",
   ],
   statsLabel: "Key figures",
   principles: [

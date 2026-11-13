@@ -48,6 +48,11 @@ const nextConfig: NextConfig = {
       rules.push({ source: `/${from}`, destination: target(""), statusCode: 301 });
     }
     rules.push({ source: "/index.html", destination: "/", statusCode: 301 });
+    // Ausgeblendete Projekte: Detailseiten auf die Projektübersicht umleiten.
+    for (const slug of ["mentorde", "kompass"]) {
+      rules.push({ source: `/:lang(en|tr)/projekte/${slug}`, destination: "/:lang#erp", statusCode: 301 });
+      rules.push({ source: `/projekte/${slug}`, destination: "/#erp", statusCode: 301 });
+    }
     return rules;
   },
 

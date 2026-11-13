@@ -48,7 +48,7 @@ export const de: Dictionary = {
     "Studiengänge auf unserer Datenplattform ApplyToGerman",
     "offizielle Datenquellen täglich zusammengeführt",
     "Marktplätze per API an Bezirga angebunden",
-    "Sprachen im Hausaufgaben-Kompass",
+    "Projekte im Portfolio – ERP, Websites und Apps",
   ],
   statsLabel: "Kennzahlen",
   principles: [

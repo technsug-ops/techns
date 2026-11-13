@@ -48,7 +48,7 @@ export const tr: Dictionary = {
     "bölüm, ApplyToGerman veri platformumuzda",
     "resmî veri kaynağı her gün birleştiriliyor",
     "pazaryeri API ile Bezirga'ya bağlı",
-    "dil, Hausaufgaben-Kompass'ta",
+    "proje portföyümüzde – ERP, web siteleri ve uygulamalar",
   ],
   statsLabel: "Rakamlar",
   principles: [
